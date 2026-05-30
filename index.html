@@ -2,57 +2,69 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorustaya</title>
     <style>
-       /* 1. Sayfanın genel ayarları (Body) */
-    body {
-        background-color: #1a1a1a;
-        color: #ffffff;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin-top: 15%;
-    }
+        /* Genel Tasarım */
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+        }
 
-    /* 2. Hakkımızda kutusunun ayarları */
-    .hakkimizda {
-        margin: 30px auto;
-        padding: 20px;
-        background-color: #2a2a2a;
-        border-radius: 15px;
-        width: 80%;
-        max-width: 600px;
-        border: 1px solid #444;
-    }
+        h1 { 
+            color: #FFD700; /* Başlık Sarı */
+            margin-top: 20px; 
+            font-size: 2.5rem;
+        }
 
-    /* 3. İletişim butonunun ayarları */
-    .iletisim-butonu {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 30px;
-        background-color: #FFD700; /* Sarı */
-        color: #000000; /* Siyah yazı */
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        border: 2px solid #000000;
-        transition: all 0.3s;
-    }
+        /* Hakkımızda Kutusu */
+        .hakkimizda {
+            background-color: #222;
+            border: 2px solid #FFD700; /* Sarı Çerçeve */
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
 
-    .iletisim-butonu:hover {
-        background-color: #000000;
-        color: #FFD700;
-        border: 2px solid #FFD700;
-    }
+        /* İletişim Butonu */
+        .iletisim-butonu {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background-color: #FFD700; /* Sarı Arka Plan */
+            color: #000000; /* Siyah Yazı */
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #FFD700;
+        }
+
+        .iletisim-butonu:hover {
+            background-color: #000000; /* Hoverda Siyah */
+            color: #FFD700; /* Hoverda Sarı Yazı */
+            border: 2px solid #FFD700;
+        }
     </style>
 </head>
 <body>
-    <img src="logo.png" alt="Sorustaya Logo" style="width: 150px; height: auto; margin-bottom: 10px;">
+
+    <img src="logo.png" alt="Sorustaya Logo" style="width: 150px; height: auto;">
+
     <h1>SORUSTAYA</h1>
     <p>İşi ustasına sor. Çok yakında burada...</p>
+
     <div class="hakkimizda">
-    <h2>Hakkımızda</h2>
-    <p>GELİYO GELİYO ÇOK TAŞŞŞAKLI Bİ ŞEY GELİYOR :D</p>
-    <a href="mailto:senin-mailin@gmail.com" class="iletisim-butonu">Bize Ulaşın</a>
-</div>
+        <h2>Hakkımızda</h2>
+        <p>GELİYO GELİYO ÇOK TAŞŞAKLI Bİ ŞEY GELİYOR :D</p>
+        
+        <a href="mailto:mail@adresin.com" class="iletisim-butonu">Bize Ulaşın</a>
+    </div>
+
 </body>
 </html>
