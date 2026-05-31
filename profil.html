@@ -320,12 +320,15 @@
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-            <div id="giris-hata">Hatalı E-Posta veya Şifre!</div>
+            <div id="giris-hata" style="color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold;">Hatalı E-Posta veya Şifre!</div>
             <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
+            <div class="kayit-link">
+                Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
+            </div>
         </div>
     </div>
 
-    <!-- ── PROFİLİ DÜZENLE MODALİ (YENİ) ──────────── -->
+    <!-- ── PROFİLİ DÜZENLE MODALİ ──────────── -->
     <div class="modal-overlay" id="duzenle-modal" onclick="duzenleDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="duzenleKapat()">✕</button>
@@ -383,7 +386,6 @@
         function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
         
         function duzenleAc() {
-            // Hafızadaki verileri kutucuklara doldur
             let data = JSON.parse(localStorage.getItem('sorustaya_profilData'));
             document.getElementById('edit-isim').value = data.isim;
             document.getElementById('edit-hakkimda').value = data.hakkimda;
@@ -441,7 +443,6 @@
                 if(document.getElementById('mobil-ornek-profil')) document.getElementById('mobil-ornek-profil').style.display = 'none';
                 document.getElementById('mobil-menu-kullanici').style.display = 'block';
                 
-                // Profili düzenle butonunu göster
                 if(document.getElementById('btn-profili-duzenle')) document.getElementById('btn-profili-duzenle').style.display = 'block';
             } else {
                 document.getElementById('btn-giris-yap').style.display = 'block';
@@ -451,14 +452,12 @@
                 if(document.getElementById('mobil-ornek-profil')) document.getElementById('mobil-ornek-profil').style.display = 'block';
                 document.getElementById('mobil-menu-kullanici').style.display = 'none';
                 
-                // Profili düzenle butonunu gizle
                 if(document.getElementById('btn-profili-duzenle')) document.getElementById('btn-profili-duzenle').style.display = 'none';
             }
         }
 
         /* ─── PROFİL DÜZENLEME MANTIĞI ─── */
         function profiliEkranaYansit() {
-            // Hafızada profil verisi yoksa, varsayılan (senin) bilgilerini oluştur.
             let data = JSON.parse(localStorage.getItem('sorustaya_profilData'));
             if (!data) {
                 data = {
@@ -470,7 +469,6 @@
                 };
                 localStorage.setItem('sorustaya_profilData', JSON.stringify(data));
             }
-            // Sayfadaki yazıları hafızadaki verilerle değiştir
             document.getElementById('goster-isim').innerText = data.isim;
             document.getElementById('goster-hakkimda').innerText = data.hakkimda;
             document.getElementById('goster-ilan1').innerText = data.ilan1;
@@ -479,7 +477,6 @@
         }
 
         function profilKaydet() {
-            // Kutucuklardaki yeni verileri al ve kaydet
             let newData = {
                 isim: document.getElementById('edit-isim').value,
                 hakkimda: document.getElementById('edit-hakkimda').value,
@@ -489,7 +486,7 @@
             };
             localStorage.setItem('sorustaya_profilData', JSON.stringify(newData));
             duzenleKapat();
-            profiliEkranaYansit(); // Sayfayı yenilemeden yazıları güncelle
+            profiliEkranaYansit(); 
         }
     </script>
 </body>
