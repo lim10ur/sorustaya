@@ -43,6 +43,10 @@
         .navbar-menu { display: flex; list-style: none; height: 46px; justify-content: center; }
         .navbar-giris { justify-self: end; display: flex; align-items: center; }
         
+        /* YENİ EKLENEN ÖRNEK PROFİL LİNKİ CSS'İ */
+        .ornek-profil-link { margin-right: 20px; color: #111; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        .ornek-profil-link:hover { border-color: #111; }
+
         .giris-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
         .giris-btn:hover { background-color: #1a1a1a; color: #fff; }
         
@@ -58,7 +62,7 @@
         .dropdown a:last-child { border-bottom: none; }
         .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── KULLANICI PROFİL MENÜSÜ (GİRİŞ YAPILINCA ÇIKAN) ─── */
+        /* ─── KULLANICI PROFİL MENÜSÜ ─── */
         .kullanici-menusu { position: relative; display: none; }
         .kullanici-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
         .kullanici-btn:hover { background-color: #1a1a1a; color: #fff; }
@@ -177,17 +181,21 @@
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
+            
             .ana-icerik { margin: 40px auto; gap: 40px; }
             .alt-kutular { flex-direction: column; gap: 20px; }
+            
             .arama-kutusu { flex-direction: column; border-radius: 12px; }
             .arama-input { padding: 18px 20px; }
             .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
+
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="index.html" class="navbar-brand">
@@ -203,7 +211,6 @@
                         <a href="#">Yazılım & Teknoloji</a>
                         <a href="#">Tasarım & Çeviri</a>
                         <a href="#">Ev & Tadilat</a>
-                        <a href="#">Tüm Kategoriler →</a>
                     </div>
                 </li>
                 <li>
@@ -217,6 +224,9 @@
                 <li><a href="#" onclick="modalAc(); return false;">İletişim</a></li>
             </ul>
             <div class="navbar-giris">
+                <!-- ÖRNEK PROFİL BUTONU BURADA -->
+                <a href="profil.html" class="ornek-profil-link" id="ornek-profil-btn">Örnek Profil</a>
+                
                 <button class="giris-btn" id="btn-giris-yap" onclick="girisAc()">Giriş Yap</button>
                 
                 <div class="kullanici-menusu" id="menu-kullanici">
@@ -234,6 +244,7 @@
         </div>
     </nav>
 
+    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="index.html">Ana Sayfa</a>
         
@@ -261,10 +272,13 @@
         </div>
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         
+        <!-- MOBİL: ÖRNEK PROFİL -->
+        <a href="profil.html" id="mobil-ornek-profil">Örnek Profil</a>
         <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
+    <!-- ── ANA İÇERİK ───────────── -->
     <div class="ana-icerik">
         <div class="ust-arama">
             <div class="arama-kutusu">
@@ -296,12 +310,14 @@
         </div>
     </div>
 
+    <!-- ── HAKKIMIZDA ────────────────────────────────── -->
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>Sorustaya, uzmanlık gerektiren her konuda yetenekli kişileri ve hizmet arayanları bir araya getiren yeni nesil bir pazaryeridir.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
+    <!-- ── İLETİŞİM MODAL ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
@@ -309,17 +325,14 @@
             <div class="modal-satir">
                 <p>Sorularınız için bizimle iletişime geçebilirsiniz.</p>
                 <div class="modal-sosyal-row">
-                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo">
+                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo" onerror="this.style.display='none'">
                     <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
                 </div>
-                <a href="https://www.instagram.com/lim10ur/?hl=tr" target="_blank" class="modal-sosyal">
-                    <img src="instalogo.png" alt="Instagram" class="modal-sosyal-logo">
-                    @lim10ur
-                </a>
             </div>
         </div>
     </div>
 
+    <!-- ── GİRİŞ MODALİ ──────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
@@ -332,7 +345,7 @@
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-            <div id="giris-hata">Hatalı E-Posta veya Şifre!</div>
+            <div id="giris-hata" style="color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold;">Hatalı E-Posta veya Şifre!</div>
             <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
             <div class="kayit-link">
                 Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
@@ -357,7 +370,7 @@
         function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
         function girisAc()      { 
             document.getElementById('giris-modal').classList.add('aktif'); 
-            document.getElementById('giris-hata').style.display = 'none'; // Hatayı sıfırla
+            document.getElementById('giris-hata').style.display = 'none';
             document.getElementById('giris-mail').value = '';
             document.getElementById('giris-sifre').value = '';
         }
@@ -374,58 +387,50 @@
             btn.nextElementSibling.classList.toggle('acik');
         }
 
-        /* ─── TARAYICI HAFIZASI İLE GİRİŞ SİSTEMİ ─── */
-        
-        // Sayfa her yüklendiğinde hafızayı kontrol et
+        /* ─── TARAYICI HAFIZASI VE GİRİŞ SİSTEMİ ─── */
         document.addEventListener("DOMContentLoaded", function() {
             girisDurumunuKontrolEt();
         });
 
-        // Giriş butonuna basılınca çalışacak asıl kod
         function sistemeGirisYap() {
             var mail = document.getElementById('giris-mail').value;
             var sifre = document.getElementById('giris-sifre').value;
 
-            // Eğer girdiği şifreler "admin" ise
             if (mail === 'admin' && sifre === 'admin') {
-                // Tarayıcı hafızasına 'admin' olarak kaydet
                 localStorage.setItem('sorustaya_giris', 'admin');
-                girisKapat(); // Modalı kapat
-                girisDurumunuKontrolEt(); // Arayüzü güncelle
+                girisKapat();
+                girisDurumunuKontrolEt();
             } else {
-                // Hatalıysa kırmızı uyarı ver
                 document.getElementById('giris-hata').style.display = 'block';
             }
         }
 
-        // Çıkış yap butonuna basılınca hafızayı sil
         function cikisYap() {
             localStorage.removeItem('sorustaya_giris');
             girisDurumunuKontrolEt();
-            if(document.body.classList.contains('menu-acik')) {
-                menuToggle();
-            }
+            if(document.body.classList.contains('menu-acik')) { menuToggle(); }
         }
 
-        // Arayüzü (Menüleri) hafızaya göre değiştiren kod
         function girisDurumunuKontrolEt() {
             var girisYapan = localStorage.getItem('sorustaya_giris');
-            
             if (girisYapan === 'admin') {
-                // GİRİŞ YAPILMIŞ: Butonları gizle, profil menülerini aç
+                // Giriş yapıldıysa Örnek Profil gizlenir, Profilim menüsü açılır
                 document.getElementById('btn-giris-yap').style.display = 'none';
+                document.getElementById('ornek-profil-btn').style.display = 'none';
                 document.getElementById('menu-kullanici').style.display = 'block';
                 document.getElementById('mobil-btn-giris').style.display = 'none';
+                document.getElementById('mobil-ornek-profil').style.display = 'none';
                 document.getElementById('mobil-menu-kullanici').style.display = 'block';
             } else {
-                // ÇIKIŞ YAPILMIŞ: Profil menülerini gizle, butonları aç
+                // Çıkış yapıldıysa Giriş ve Örnek Profil geri gelir
                 document.getElementById('btn-giris-yap').style.display = 'block';
+                document.getElementById('ornek-profil-btn').style.display = 'block';
                 document.getElementById('menu-kullanici').style.display = 'none';
                 document.getElementById('mobil-btn-giris').style.display = 'block';
+                document.getElementById('mobil-ornek-profil').style.display = 'block';
                 document.getElementById('mobil-menu-kullanici').style.display = 'none';
             }
         }
     </script>
-
 </body>
 </html>

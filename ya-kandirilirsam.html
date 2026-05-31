@@ -20,6 +20,10 @@
         .navbar-logo { width: 22px; height: auto; }
         .navbar-menu { display: flex; list-style: none; height: 46px; justify-content: center; }
         .navbar-giris { justify-self: end; display: flex; align-items: center; }
+        
+        .ornek-profil-link { margin-right: 20px; color: #111; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        .ornek-profil-link:hover { border-color: #111; }
+
         .giris-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
         .giris-btn:hover { background-color: #1a1a1a; color: #fff; }
         .navbar-menu > li { position: relative; height: 100%; }
@@ -78,6 +82,7 @@
         .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
         .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+        #giris-hata { color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold; }
 
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; margin-top: auto; }
         .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -151,10 +156,11 @@
                 <li><a href="#" onclick="modalAc(); return false;">İletişim</a></li>
             </ul>
             <div class="navbar-giris">
-                <!-- GİRİŞ YAPILMADIĞINDA GÖRÜNEN BUTON -->
+                <!-- ÖRNEK PROFİL LİNKİ -->
+                <a href="profil.html" class="ornek-profil-link" id="ornek-profil-btn">Örnek Profil</a>
+
                 <button class="giris-btn" id="btn-giris-yap" onclick="girisAc()">Giriş Yap</button>
                 
-                <!-- GİRİŞ YAPILDIĞINDA GÖRÜNECEK PROFİL MENÜSÜ -->
                 <div class="kullanici-menusu" id="menu-kullanici">
                     <button class="kullanici-btn">Profilim <span class="arrow">▼</span></button>
                     <div class="kullanici-dropdown">
@@ -199,17 +205,17 @@
         </div>
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         
+        <!-- MOBİL ÖRNEK PROFİL LİNKİ -->
+        <a href="profil.html" id="mobil-ornek-profil">Örnek Profil</a>
         <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── HERO BÖLÜMÜ ─── -->
     <div class="usta-hero">
         <h1>Aklında Soru İşareti Kalmasın</h1>
         <p>Paran ve zamanın Sorustaya güvencesi altında. Sen sadece alacağın hizmetin kalitesine odaklan.</p>
     </div>
 
-    <!-- ── AKORDEON (S.S.S) BÖLÜMÜ ─── -->
     <div class="sss-konteyner">
         <h2 class="sss-baslik">Güvencelerimiz</h2>
 
@@ -337,13 +343,17 @@
             var girisYapan = localStorage.getItem('sorustaya_giris');
             if (girisYapan === 'admin') {
                 document.getElementById('btn-giris-yap').style.display = 'none';
+                if(document.getElementById('ornek-profil-btn')) document.getElementById('ornek-profil-btn').style.display = 'none';
                 document.getElementById('menu-kullanici').style.display = 'block';
                 document.getElementById('mobil-btn-giris').style.display = 'none';
+                if(document.getElementById('mobil-ornek-profil')) document.getElementById('mobil-ornek-profil').style.display = 'none';
                 document.getElementById('mobil-menu-kullanici').style.display = 'block';
             } else {
                 document.getElementById('btn-giris-yap').style.display = 'block';
+                if(document.getElementById('ornek-profil-btn')) document.getElementById('ornek-profil-btn').style.display = 'block';
                 document.getElementById('menu-kullanici').style.display = 'none';
                 document.getElementById('mobil-btn-giris').style.display = 'block';
+                if(document.getElementById('mobil-ornek-profil')) document.getElementById('mobil-ornek-profil').style.display = 'block';
                 document.getElementById('mobil-menu-kullanici').style.display = 'none';
             }
         }
