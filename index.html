@@ -55,7 +55,20 @@
     <p>İşi ustasına sor. Çok yakında burada...</p>
 
     <div class="hakkimizda">
-        <img src="logohakkimda.png" alt="Açıklama" style="width: 600px; height: auto;">
+        {
+    /* Burası önemli: Görseli arka plan yapıyoruz */
+    background-image: url('logohakkimda.png'); 
+    background-size: cover; /* Görseli kutuyu tam kaplayacak şekilde ayarlar */
+    background-position: center; /* Görseli ortalar */
+    background-repeat: no-repeat; /* Görselin tekrar etmemesini sağlar */
+    
+    /* Geri kalan tasarım */
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 15px;
+    border: 3px solid #FFD700;
+}
         <h2>Hakkımızda</h2>
         <p>GELİYO GELİYO ÇOK TAŞŞAKLI Bİ ŞEY GELİYOR :D</p>
         
