@@ -226,8 +226,76 @@
             width: 60px;
             height: 3px;
             background-color: var(--gold);
-            margin: 20px auto 0;
+            margin: 20px auto 40px;
             border-radius: 2px;
+        }
+
+        /* ─── HİZMET KARTLARI ────────────────────────── */
+        .hizmetler-bolum {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 820px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .hizmet-kart {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px 20px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            transition: transform 0.22s, box-shadow 0.22s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hizmet-kart::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .hizmet-kart:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        }
+
+        .hizmet-ikon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .hizmet-kart h3 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hizmet-kart p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .hizmet-yakinda {
+            display: inline-block;
+            padding: 3px 12px;
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,215,0,0.6);
         }
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
@@ -244,8 +312,9 @@
             border-radius: 12px;
             padding: 45px 40px;
             max-width: 620px;
-            margin: 80px auto 60px;
+            margin: 40px auto 60px;
             box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+            text-align: center;
         }
 
         .hakkimizda::before {
@@ -267,9 +336,9 @@
         }
 
         .hakkimizda p {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
             line-height: 1.8;
-            font-size: 0.98rem;
+            font-size: 1.05rem;
         }
 
         .iletisim-butonu {
@@ -303,7 +372,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        /* ─── MODAl ──────────────────────────────────── */
+        /* ─── MODAL ──────────────────────────────────── */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -531,74 +600,6 @@
             color: #fff;
         }
 
-        /* ─── HİZMET KARTLARI ────────────────────────── */
-        .hizmetler-bolum {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 820px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-        }
-
-        .hizmet-kart {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 30px 20px 24px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-            transition: transform 0.22s, box-shadow 0.22s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hizmet-kart::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--gold);
-        }
-
-        .hizmet-kart:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-        }
-
-        .hizmet-ikon {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-            line-height: 1;
-        }
-
-        .hizmet-kart h3 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--gold);
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .hizmet-kart p {
-            color: rgba(255,255,255,0.55);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 14px;
-        }
-
-        .hizmet-yakinda {
-            display: inline-block;
-            padding: 3px 12px;
-            border: 1px solid rgba(255,215,0,0.4);
-            border-radius: 20px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,215,0,0.6);
-        }
-
         /* ─── FOOTER ─────────────────────────────────── */
         .site-footer {
             background: #111111;
@@ -641,7 +642,7 @@
 
         .footer-linkler a:hover { color: var(--gold); }
 
-        /* ─── HAMBURGEr ──────────────────────────────── */
+        /* ─── HAMBURGER MENÜ ─────────────────────────── */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -698,7 +699,6 @@
 
         body.menu-acik { overflow: hidden; }
 
-        /* Düz linkler */
         .mobil-menu > a {
             display: block;
             padding: 13px 22px;
@@ -715,7 +715,6 @@
 
         .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
 
-        /* Accordion kategoriler */
         .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
 
         .mobil-kategori-btn {
@@ -789,7 +788,7 @@
 
         .giris-btn-mobil:hover { background: #222; }
 
-        /* ─── MOBİL GENEL ────────────────────────────── */
+        /* ─── MOBİL GENEL UYUMLULUK ──────────────────── */
         @media (max-width: 768px) {
             .navbar-inner {
                 grid-template-columns: 1fr auto;
@@ -806,6 +805,7 @@
 
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
             .hakkimizda h2 { font-size: 1.5rem; letter-spacing: 2px; }
+            .hakkimizda p { font-size: 0.95rem; }
             .hizmetler-bolum { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; margin-bottom: 40px; }
             .modal-kutu { padding: 28px 22px 24px; }
             .footer-linkler { gap: 16px; }
@@ -814,7 +814,6 @@
 </head>
 <body>
 
-    <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="#" class="navbar-brand">
@@ -852,7 +851,6 @@
         </div>
     </nav>
 
-    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="#">Ana Sayfa</a>
 
@@ -861,45 +859,22 @@
                 Hizmetler <span class="mobil-arrow">▼</span>
             </button>
             <div class="mobil-alt-menu">
-                <a href="#">Nasıl Usta Bulunur?</a>
-                <a href="#">Hizmet Nasıl Alınır?</a>
-                <a href="#">Fiyatlar Nasıl Belirlenir?</a>
-                <a href="#">Ödeme Güvenli mi?</a>
+                <a href="#">Elektrikçi</a>
+                <a href="#">Tesisatçı</a>
+                <a href="#">Boyacı</a>
+                <a href="#">Tamirci</a>
+                <a href="#">Tüm Hizmetler →</a>
             </div>
         </div>
 
         <div class="mobil-kategori">
             <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Hakkımızda <span class="mobil-arrow">▼</span>
+                Kurumsal <span class="mobil-arrow">▼</span>
             </button>
             <div class="mobil-alt-menu">
-                <a href="#">Biz Kimiz?</a>
-                <a href="#">Neden Sorustaya?</a>
-                <a href="#">Ekibimiz</a>
-            </div>
-        </div>
-
-        <div class="mobil-kategori">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Nasıl Çalışır? <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="#">Hesap Oluştur</a>
-                <a href="#">Usta Seç</a>
-                <a href="#">Randevu Al</a>
-                <a href="#">Değerlendir</a>
-            </div>
-        </div>
-
-        <div class="mobil-kategori">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                S.S.S. <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="#">Hesabım ile İlgili</a>
-                <a href="#">Ödeme Soruları</a>
-                <a href="#">İptal & İade</a>
-                <a href="#">Teknik Destek</a>
+                <a href="#">Hakkımızda</a>
+                <a href="#">Nasıl Çalışır?</a>
+                <a href="#">S.S.S.</a>
             </div>
         </div>
 
@@ -907,10 +882,8 @@
         <button class="giris-btn-mobil" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
 
-    <!-- Menü dışına basınca kapansın -->
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── HERO ──────────────────────────────────────── -->
     <div class="hero">
         <div class="hero-title">
             <img src="logo3.png" alt="Sorustaya Logo" class="hero-logo">
@@ -920,20 +893,39 @@
         <div class="hero-divider"></div>
     </div>
 
-    <!-- ── HAKKIMIZDA ─────────────────────────────────── -->
+    <div class="hizmetler-bolum">
+        <div class="hizmet-kart">
+            <div class="hizmet-ikon">⚡</div>
+            <h3>Elektrikçi</h3>
+            <p>Güvenilir elektrik tesisatı kurulumu ve arıza onarım hizmetleri.</p>
+            <span class="hizmet-yakinda">Yakında</span>
+        </div>
+        <div class="hizmet-kart">
+            <div class="hizmet-ikon">🚿</div>
+            <h3>Tesisatçı</h3>
+            <p>Su kaçağı tespiti, tıkanıklık açma ve tüm tesisat çözümleri.</p>
+            <span class="hizmet-yakinda">Yakında</span>
+        </div>
+        <div class="hizmet-kart">
+            <div class="hizmet-ikon">🎨</div>
+            <h3>Boyacı</h3>
+            <p>Profesyonel iç ve dış cephe boya, badana ve dekorasyon hizmetleri.</p>
+            <span class="hizmet-yakinda">Yakında</span>
+        </div>
+    </div>
+
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
-        <p>GELİYO GELİYO ÇOK TAŞŞAKLI Bİ ŞEY GELİYOR :D</p>
+        <p>Sorustaya, kullanıcıların güvenilir ustalara ve hizmet sağlayıcılara hızlıca ulaşabilmesini amaçlayan yeni nesil bir hizmet platformudur.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
-    <!-- ── MODAL ─────────────────────────────────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
-            <div class="modal-baslik">Hakkımda</div>
+            <div class="modal-baslik">İletişim</div>
             <div class="modal-satir">
-                <p>Bu projeyi bitirmeliyim.</p>
+                <p>Sorularınız için bizimle iletişime geçebilirsiniz.</p>
                 <div class="modal-sosyal-row">
                     <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo">
                     <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
@@ -946,7 +938,6 @@
         </div>
     </div>
 
-    <!-- ── GİRİŞ MODALİ ──────────────────────────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
@@ -969,6 +960,17 @@
             </div>
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-linkler">
+                <a href="#" onclick="modalAc(); return false;">İletişim</a>
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+            </div>
+            <p>© 2026 Sorustaya. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
 
     <script>
         function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
