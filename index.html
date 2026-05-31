@@ -379,14 +379,36 @@
             color: #fff;
         }
 
-        .modal-insta-logo {
+        .modal-sosyal-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 4px;
+        }
+
+        .modal-sosyal-row a {
+            color: var(--gold);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .modal-sosyal-row a:hover {
+            color: #fff;
+        }
+
+        .modal-sosyal-logo {
             width: 30px;
             height: 30px;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
+            flex-shrink: 0;
         }
 
-        .modal-insta-logo:hover {
+        .modal-sosyal-logo:hover {
             transform: scale(1.12);
             box-shadow: 0 4px 14px rgba(255,215,0,0.4);
         }
@@ -473,9 +495,12 @@
             <div class="modal-baslik">Hakkımda</div>
             <div class="modal-satir">
                 <p>Bu projeyi bitirmeliyim.</p>
-                <p>mail: <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a></p>
+                <div class="modal-sosyal-row">
+                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo">
+                    <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
+                </div>
                 <a href="https://www.instagram.com/lim10ur/?hl=tr" target="_blank" class="modal-sosyal">
-                    <img src="instalogo.png" alt="Instagram" class="modal-insta-logo">
+                    <img src="instalogo.png" alt="Instagram" class="modal-sosyal-logo">
                     @lim10ur
                 </a>
             </div>
