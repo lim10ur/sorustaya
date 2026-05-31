@@ -72,6 +72,9 @@
 
         .sag-cta {
             flex: 0.8;
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px;
         }
 
         /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
@@ -87,7 +90,7 @@
         .arama-etiketi { background: #1a1a1a; color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: transform 0.2s, background 0.2s; }
         .arama-etiketi:hover { background: #000; transform: translateY(-2px); }
 
-        /* ─── NASIL USTA OLURUM KUTUSU ────────── */
+        /* ─── YÖNLENDİRME KUTULARI (CTA) ────────── */
         .usta-ol-kutu {
             display: block;
             background: #1a1a1a;
@@ -232,7 +235,6 @@
 </head>
 <body>
 
-    <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="#" class="navbar-brand">
@@ -270,7 +272,6 @@
         </div>
     </nav>
 
-    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="#">Ana Sayfa</a>
         <div class="mobil-kategori">
@@ -289,10 +290,8 @@
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── ANA İÇERİK (ARAMA + CTA KUTUSU) ───────────── -->
     <div class="ana-icerik">
         
-        <!-- Sol Taraf: Arama Çubuğu -->
         <div class="sol-arama">
             <div class="arama-kutusu">
                 <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
@@ -308,9 +307,7 @@
             </div>
         </div>
 
-        <!-- Sağ Taraf: İki Adet Yönlendirme Kutusu -->
-        <div class="sag-cta" style="display: flex; flex-direction: column; gap: 20px;">
-            <!-- Nasıl Usta Olurum Kutusu -->
+        <div class="sag-cta">
             <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
                 <div class="usta-ol-ikon">🚀</div>
                 <h3>NASIL USTA OLURUM?</h3>
@@ -318,7 +315,6 @@
                 <span class="usta-ol-ok">Tıkla ve Öğren →</span>
             </a>
 
-            <!-- Ya Kandırılırsam Kutusu (YENİ) -->
             <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;">
                 <div class="usta-ol-ikon">🤨</div>
                 <h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3>
@@ -328,27 +324,13 @@
         </div>
 
     </div>
-        <!-- Sağ Taraf: Nasıl Usta Olurum Kutusu -->
-        <div class="sag-cta">
-            <!-- TARGET KISMINI SİLDİM, AYNI SEKMEDE AÇILACAK -->
-            <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
-                <div class="usta-ol-ikon">🚀</div>
-                <h3>NASIL USTA OLURUM?</h3>
-                <p>Yeteneklerini kazanca çevir! Kendi profilini oluştur, fiyatını belirle ve hemen iş almaya başla. 💡💸</p>
-                <span class="usta-ol-ok">Tıkla ve Öğren →</span>
-            </a>
-        </div>
 
-    </div>
-
-    <!-- ── HAKKIMIZDA ────────────────────────────────── -->
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>Sorustaya, uzmanlık gerektiren her konuda yetenekli kişileri ve hizmet arayanları bir araya getiren yeni nesil bir pazaryeridir.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
-    <!-- ── MODALLAR VE FOOTER ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
