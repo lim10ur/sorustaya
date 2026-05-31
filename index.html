@@ -58,23 +58,25 @@
         /* ─── ANA İÇERİK DÜZENİ ───────────────── */
         .ana-icerik {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             max-width: 1100px;
-            margin: 80px auto 60px;
+            margin: 60px auto;
             padding: 0 20px;
-            gap: 50px;
+            gap: 45px;
         }
 
-        .sol-arama {
-            flex: 1.2;
+        .ust-arama {
+            width: 100%;
+            max-width: 850px;
         }
 
-        .sag-cta {
-            flex: 0.8;
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px;
+        .alt-kutular {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
         }
 
         /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
@@ -85,7 +87,7 @@
         .arama-btn { background-color: var(--gold); color: #000; border: none; padding: 0 40px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
         .arama-btn:hover { background-color: #1a1a1a; color: var(--gold); }
         
-        .populer-aramalar { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .populer-aramalar { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; }
         .populer-baslik { font-size: 0.95rem; color: #666; font-weight: 600; margin-right: 5px; }
         .arama-etiketi { background: #1a1a1a; color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: transform 0.2s, background 0.2s; }
         .arama-etiketi:hover { background: #000; transform: translateY(-2px); }
@@ -93,6 +95,7 @@
         /* ─── YÖNLENDİRME KUTULARI (CTA) ────────── */
         .usta-ol-kutu {
             display: block;
+            flex: 1; /* Kutuların genişliklerini eşitler */
             background: #1a1a1a;
             border: 2px dashed var(--gold);
             border-radius: 20px;
@@ -221,13 +224,12 @@
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
             
-            .ana-icerik { flex-direction: column; margin: 40px auto; gap: 40px; }
-            .sag-cta { width: 100%; }
+            .ana-icerik { margin: 40px auto; gap: 40px; }
+            .alt-kutular { flex-direction: column; gap: 20px; }
             
             .arama-kutusu { flex-direction: column; border-radius: 12px; }
             .arama-input { padding: 18px 20px; }
             .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
-            .populer-aramalar { justify-content: center; }
 
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
         }
@@ -235,6 +237,7 @@
 </head>
 <body>
 
+    <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="#" class="navbar-brand">
@@ -272,6 +275,7 @@
         </div>
     </nav>
 
+    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="#">Ana Sayfa</a>
         <div class="mobil-kategori">
@@ -290,9 +294,11 @@
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
+    <!-- ── ANA İÇERİK (ARAMA + CTA KUTULARI) ───────────── -->
     <div class="ana-icerik">
         
-        <div class="sol-arama">
+        <!-- Üst Taraf: Arama Çubuğu -->
+        <div class="ust-arama">
             <div class="arama-kutusu">
                 <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
                 <button class="arama-btn">ARA</button>
@@ -307,7 +313,9 @@
             </div>
         </div>
 
-        <div class="sag-cta">
+        <!-- Alt Taraf: İki Adet Yönlendirme Kutusu (Yan Yana) -->
+        <div class="alt-kutular">
+            <!-- Nasıl Usta Olurum Kutusu -->
             <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
                 <div class="usta-ol-ikon">🚀</div>
                 <h3>NASIL USTA OLURUM?</h3>
@@ -315,6 +323,7 @@
                 <span class="usta-ol-ok">Tıkla ve Öğren →</span>
             </a>
 
+            <!-- Ya Kandırılırsam Kutusu -->
             <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;">
                 <div class="usta-ol-ikon">🤨</div>
                 <h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3>
@@ -325,12 +334,14 @@
 
     </div>
 
+    <!-- ── HAKKIMIZDA ────────────────────────────────── -->
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>Sorustaya, uzmanlık gerektiren her konuda yetenekli kişileri ve hizmet arayanları bir araya getiren yeni nesil bir pazaryeridir.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
+    <!-- ── MODALLAR VE FOOTER ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
