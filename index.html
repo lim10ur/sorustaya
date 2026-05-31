@@ -36,356 +36,126 @@
         }
 
         /* ─── NAVBAR ─────────────────────────────────── */
-        .navbar {
-            background-color: var(--gold);
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-        }
+        .navbar { background-color: var(--gold); width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 10px rgba(0,0,0,0.5); }
+        .navbar-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 30px; height: 46px; max-width: 1200px; margin: 0 auto; }
+        .navbar-brand { display: flex; align-items: center; gap: 9px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; color: #000; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; justify-self: start; }
+        .navbar-logo { width: 22px; height: auto; }
+        .navbar-menu { display: flex; list-style: none; height: 46px; justify-content: center; }
+        .navbar-giris { justify-self: end; display: flex; align-items: center; }
+        .giris-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
+        .giris-btn:hover { background-color: #1a1a1a; color: #fff; }
+        .navbar-menu > li { position: relative; height: 100%; }
+        .navbar-menu > li > a { display: flex; align-items: center; height: 100%; padding: 0 16px; color: #000; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: background-color 0.2s; gap: 5px; }
+        .navbar-menu > li > a:hover { background-color: rgba(0,0,0,0.1); }
+        .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+        .navbar-menu > li:hover .arrow { transform: rotate(180deg); }
+        .dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0; background-color: #1c1c1c; min-width: 190px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; }
+        .navbar-menu > li:hover .dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
+        .dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
+        .dropdown a:last-child { border-bottom: none; }
+        .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        .navbar-inner {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            padding: 0 30px;
-            height: 46px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar-brand {
+        /* ─── ANA İÇERİK DÜZENİ (YENİ) ───────────────── */
+        .ana-icerik {
             display: flex;
             align-items: center;
-            gap: 9px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #000;
-            letter-spacing: 1px;
-            text-decoration: none;
-            text-transform: uppercase;
-            justify-self: start;
-        }
-
-        .navbar-logo {
-            width: 22px;
-            height: auto;
-        }
-
-        .navbar-menu {
-            display: flex;
-            list-style: none;
-            height: 46px;
-            justify-content: center;
-        }
-
-        .navbar-giris {
-            justify-self: end;
-            display: flex;
-            align-items: center;
-        }
-
-        .giris-btn {
-            background-color: #000;
-            color: var(--gold);
-            border: none;
-            padding: 7px 18px;
-            border-radius: 6px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .giris-btn:hover {
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-
-        .navbar-menu > li {
-            position: relative;
-            height: 100%;
-        }
-
-        .navbar-menu > li > a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            padding: 0 16px;
-            color: #000;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: background-color 0.2s;
-            gap: 5px;
-        }
-
-        .navbar-menu > li > a:hover {
-            background-color: rgba(0,0,0,0.1);
-        }
-
-        .arrow {
-            font-size: 0.6rem;
-            transition: transform 0.2s;
-        }
-
-        .navbar-menu > li:hover .arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Dropdown */
-        .dropdown {
-            visibility: hidden;
-            opacity: 0;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #1c1c1c;
-            min-width: 190px;
-            border-top: 3px solid var(--gold);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-            transform: translateY(-6px);
-            transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-        }
-
-        .navbar-menu > li:hover .dropdown {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .dropdown a {
-            display: block;
-            padding: 11px 20px;
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 600;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: background-color 0.15s, color 0.15s, padding-left 0.15s;
-        }
-
-        .dropdown a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown a:hover {
-            background-color: var(--gold);
-            color: #000;
-            padding-left: 26px;
-        }
-
-        /* ─── HERO ───────────────────────────────────── */
-        .hero {
-            text-align: center;
-            padding: 50px 20px 30px;
-        }
-
-        .hero-title {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 22px;
-        }
-
-        .hero-logo {
-            width: 75px;
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
-        }
-
-        .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            color: #1a1a1a;
-            font-size: 4.5rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .hero p {
-            color: #666666;
-            font-size: 1rem;
-            margin-top: 10px;
-            letter-spacing: 2px;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
-
-        /* ─── BIONLUK TARZI ARAMA BÖLÜMÜ ─────────────── */
-        .arama-bolumu {
-            max-width: 750px;
-            margin: 0 auto 60px;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 80px auto 60px;
             padding: 0 20px;
+            gap: 50px;
+        }
+
+        .sol-arama {
+            flex: 1.2;
+        }
+
+        .sag-cta {
+            flex: 0.8;
+        }
+
+        /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
+        .arama-kutusu { display: flex; background: #fff; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); overflow: hidden; border: 2px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+        .arama-kutusu:focus-within { border-color: var(--gold); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2); }
+        .arama-input { flex: 1; border: none; padding: 22px 30px; font-size: 1.15rem; font-family: 'Nunito', sans-serif; outline: none; color: #1a1a1a; }
+        .arama-input::placeholder { color: #999; font-weight: 400; }
+        .arama-btn { background-color: var(--gold); color: #000; border: none; padding: 0 40px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+        .arama-btn:hover { background-color: #1a1a1a; color: var(--gold); }
+        
+        .populer-aramalar { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .populer-baslik { font-size: 0.95rem; color: #666; font-weight: 600; margin-right: 5px; }
+        .arama-etiketi { background: #1a1a1a; color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: transform 0.2s, background 0.2s; }
+        .arama-etiketi:hover { background: #000; transform: translateY(-2px); }
+
+        /* ─── NASIL USTA OLURUM KUTUSU (YENİ) ────────── */
+        .usta-ol-kutu {
+            display: block;
+            background: #1a1a1a;
+            border: 2px dashed var(--gold);
+            border-radius: 20px;
+            padding: 35px 25px;
             text-align: center;
-        }
-
-        .arama-kutusu {
-            display: flex;
-            background: #fff;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
             overflow: hidden;
-            border: 2px solid transparent;
-            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        .arama-kutusu:focus-within {
-            border-color: var(--gold);
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
+        .usta-ol-kutu:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            background: #111111;
         }
 
-        .arama-input {
-            flex: 1;
-            border: none;
-            padding: 20px 30px;
-            font-size: 1.1rem;
-            font-family: 'Nunito', sans-serif;
-            outline: none;
-            color: #1a1a1a;
+        .usta-ol-ikon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1;
         }
 
-        .arama-input::placeholder {
-            color: #999;
-            font-weight: 400;
-        }
-
-        .arama-btn {
-            background-color: var(--gold);
-            color: #000;
-            border: none;
-            padding: 0 40px;
+        .usta-ol-kutu h3 {
+            color: var(--gold);
             font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .usta-ol-kutu p {
+            color: rgba(255,255,255,0.8);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .usta-ol-ok {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            font-family: 'Oswald', sans-serif;
+            padding: 10px 24px;
+            border-radius: 30px;
             font-weight: 700;
-            letter-spacing: 1px;
             text-transform: uppercase;
-            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             transition: background 0.2s;
         }
 
-        .arama-btn:hover {
-            background-color: #1a1a1a;
-            color: var(--gold);
-        }
-
-        .populer-aramalar {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .populer-baslik {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 600;
-        }
-
-        .arama-etiketi {
-            background: #1a1a1a;
-            color: var(--gold);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .arama-etiketi:hover {
-            background: #000;
-            transform: translateY(-2px);
+        .usta-ol-kutu:hover .usta-ol-ok {
+            background: #fff;
         }
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
-        .hakkimizda {
-            position: relative;
-            background-image:
-                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
-                url('logohakkimda.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-clip: padding-box;
-            border: 2px solid transparent;
-            border-radius: 12px;
-            padding: 45px 40px;
-            max-width: 620px;
-            margin: 40px auto 60px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.18);
-            text-align: center;
-        }
+        .hakkimizda { position: relative; background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('logohakkimda.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-clip: padding-box; border: 2px solid transparent; border-radius: 12px; padding: 45px 40px; max-width: 620px; margin: 40px auto 60px; box-shadow: 0 8px 40px rgba(0,0,0,0.18); text-align: center; }
+        .hakkimizda::before { content: ''; position: absolute; inset: -2px; border-radius: 14px; background: linear-gradient(135deg, #FFD700 0%, #aaaaaa 60%, #666666 100%); z-index: -1; }
+        .hakkimizda h2 { font-family: 'Oswald', sans-serif; color: var(--gold); font-size: 2rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+        .hakkimizda p { color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.05rem; }
+        .iletisim-butonu { display: inline-block; margin-top: 28px; padding: 13px 32px; background-color: var(--gold); color: #000; text-decoration: none; border-radius: 6px; font-weight: 900; font-family: 'Oswald', sans-serif; font-size: 1.15rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.22s ease; border: 2px solid var(--gold); cursor: pointer; }
+        .iletisim-butonu:hover { background-color: #1a1a1a; color: var(--gold); border-color: #1a1a1a; transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.35); }
 
-        .hakkimizda::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #FFD700 0%, #aaaaaa 60%, #666666 100%);
-            z-index: -1;
-        }
-
-        .hakkimizda h2 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--gold);
-            font-size: 2rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .hakkimizda p {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        .iletisim-butonu {
-            display: inline-block;
-            margin-top: 28px;
-            padding: 13px 32px;
-            background-color: var(--gold);
-            color: #000;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.15rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.22s ease;
-            border: 2px solid var(--gold);
-            cursor: pointer;
-        }
-
-        .iletisim-butonu:hover {
-            background-color: #1a1a1a;
-            color: var(--gold);
-            border-color: #1a1a1a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.35);
-        }
-
-        .iletisim-butonu:active {
-            transform: translateY(0px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        /* ─── MODAL ──────────────────────────────────── */
-        /* ... (Modal CSS kodları tamamen aynı kalıyor) ... */
+        /* ─── MODAL (Aynı Kaldı) ─────────────────────── */
         .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(20,20,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
         .modal-overlay.aktif { display: flex; }
         .modal-kutu { background: #222222; border: 2px solid var(--gold); border-radius: 14px; padding: 36px 34px 32px; width: 380px; max-width: 90vw; position: relative; animation: modalAc 0.25s ease; }
@@ -398,12 +168,9 @@
         .modal-satir a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
         .modal-satir a:hover { color: #fff; }
         .modal-sosyal { display: inline-flex; align-items: center; gap: 9px; margin-top: 4px; text-decoration: none; color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; transition: color 0.2s; }
-        .modal-sosyal:hover { color: #fff; }
         .modal-sosyal-row { display: flex; align-items: center; gap: 9px; margin-top: 4px; }
         .modal-sosyal-row a { color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
-        .modal-sosyal-row a:hover { color: #fff; }
         .modal-sosyal-logo { width: 30px; height: 30px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; }
-        .modal-sosyal-logo:hover { transform: scale(1.12); box-shadow: 0 4px 14px rgba(255,215,0,0.4); }
 
         /* ─── GİRİŞ MODALİ ──────────────────────────── */
         .form-grup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
@@ -413,10 +180,8 @@
         .form-input::placeholder { color: rgba(255,255,255,0.25); }
         .giris-submit { width: 100%; margin-top: 6px; padding: 12px; background-color: var(--gold); color: #000; border: none; border-radius: 7px; font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
         .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
-        .giris-submit:active { transform: translateY(0); }
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
         .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
-        .kayit-link a:hover { color: #fff; }
 
         /* ─── FOOTER ─────────────────────────────────── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; }
@@ -426,14 +191,12 @@
         .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; transition: color 0.2s; }
         .footer-linkler a:hover { color: var(--gold); }
 
-        /* ─── HAMBURGER MENÜ ─────────────────────────── */
+        /* ─── MOBİL MENÜ ve UYUMLULUK ────────────────── */
         .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 26px; height: 19px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
         .hamburger span { display: block; width: 100%; height: 2.5px; background-color: #000; border-radius: 2px; transition: all 0.28s ease; }
         .hamburger.acik span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
         .hamburger.acik span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.acik span:nth-child(3) { transform: translateY(-8.25px) rotate(-45deg); }
-
-        /* ─── MOBİL MENÜ ─────────────────────────────── */
         .mobil-menu { display: none; position: fixed; top: 46px; left: 0; right: 0; z-index: 998; background: var(--gold); box-shadow: 0 5px 18px rgba(0,0,0,0.3); max-height: calc(100vh - 46px); overflow-y: auto; padding-bottom: 30px; }
         .mobil-menu.acik { display: block; }
         .mobil-overlay { display: none; position: fixed; inset: 0; top: 46px; z-index: 997; background: rgba(0,0,0,0.35); }
@@ -443,38 +206,27 @@
         .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
         .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
         .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; transition: background 0.15s; }
-        .mobil-kategori-btn:hover { background: rgba(0,0,0,0.07); }
         .mobil-arrow { font-size: 0.65rem; transition: transform 0.25s; flex-shrink: 0; }
         .mobil-kategori-btn.acik .mobil-arrow { transform: rotate(180deg); }
         .mobil-alt-menu { display: none; background: rgba(0,0,0,0.06); }
         .mobil-alt-menu.acik { display: block; }
-        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); transition: background 0.15s, padding-left 0.15s; }
-        .mobil-alt-menu a:last-child { border-bottom: none; }
-        .mobil-alt-menu a:hover { background: rgba(0,0,0,0.06); padding-left: 46px; }
-        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; transition: background 0.2s; }
-        .giris-btn-mobil:hover { background: #222; }
+        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; }
 
-        /* ─── MOBİL GENEL UYUMLULUK ──────────────────── */
         @media (max-width: 768px) {
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
-            .hero { padding: 30px 16px 20px; }
-            .hero h1 { font-size: 2.4rem; letter-spacing: 2px; }
-            .hero-logo { width: 48px; }
-            .hero-title { gap: 12px; }
-            .hero p { font-size: 0.82rem; letter-spacing: 1px; }
+            
+            .ana-icerik { flex-direction: column; margin: 40px auto; gap: 40px; }
+            .sag-cta { width: 100%; }
             
             .arama-kutusu { flex-direction: column; border-radius: 12px; }
-            .arama-input { padding: 15px 20px; }
+            .arama-input { padding: 18px 20px; }
             .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
-            .populer-aramalar { gap: 8px; }
+            .populer-aramalar { justify-content: center; }
 
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
-            .hakkimizda h2 { font-size: 1.5rem; letter-spacing: 2px; }
-            .hakkimizda p { font-size: 0.95rem; }
-            .modal-kutu { padding: 28px 22px 24px; }
-            .footer-linkler { gap: 16px; }
         }
     </style>
 </head>
@@ -521,7 +273,6 @@
     <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="#">Ana Sayfa</a>
-
         <div class="mobil-kategori">
             <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
                 Kategoriler <span class="mobil-arrow">▼</span>
@@ -531,50 +282,43 @@
                 <a href="#">Yazılım & Teknoloji</a>
                 <a href="#">Tasarım & Çeviri</a>
                 <a href="#">Ev & Tadilat</a>
-                <a href="#">Tüm Kategoriler →</a>
             </div>
         </div>
-
-        <div class="mobil-kategori">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Kurumsal <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="#">Hakkımızda</a>
-                <a href="#">Nasıl Çalışır?</a>
-                <a href="#">S.S.S.</a>
-            </div>
-        </div>
-
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         <button class="giris-btn-mobil" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── KARŞILAMA EKRANI (HERO) ───────────────────── -->
-    <div class="hero">
-        <div class="hero-title">
-            <img src="logo3.png" alt="Sorustaya Logo" class="hero-logo">
-            <h1>SORUSTAYA</h1>
-        </div>
-        <p>İşi ustasına sor. Çok yakında burada...</p>
-    </div>
-
-    <!-- ── ARAMA BÖLÜMÜ (BIONLUK TARZI) ──────────────── -->
-    <div class="arama-bolumu">
-        <div class="arama-kutusu">
-            <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
-            <button class="arama-btn">ARA</button>
-        </div>
+    <!-- ── ANA İÇERİK (ARAMA + CTA KUTUSU) ───────────── -->
+    <div class="ana-icerik">
         
-        <div class="populer-aramalar">
-            <span class="populer-baslik">Popüler Etiketler:</span>
-            <a href="#" class="arama-etiketi">#ingilizce</a>
-            <a href="#" class="arama-etiketi">#yazılım</a>
-            <a href="#" class="arama-etiketi">#grafiktasarım</a>
-            <a href="#" class="arama-etiketi">#matematik</a>
-            <a href="#" class="arama-etiketi">#çeviri</a>
+        <!-- Sol Taraf: Arama Çubuğu -->
+        <div class="sol-arama">
+            <div class="arama-kutusu">
+                <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
+                <button class="arama-btn">ARA</button>
+            </div>
+            <div class="populer-aramalar">
+                <span class="populer-baslik">Popüler Etiketler:</span>
+                <a href="#" class="arama-etiketi">#ingilizce</a>
+                <a href="#" class="arama-etiketi">#yazılım</a>
+                <a href="#" class="arama-etiketi">#grafiktasarım</a>
+                <a href="#" class="arama-etiketi">#matematik</a>
+                <a href="#" class="arama-etiketi">#çeviri</a>
+            </div>
         </div>
+
+        <!-- Sağ Taraf: Nasıl Usta Olurum Kutusu -->
+        <div class="sag-cta">
+            <!-- Dosya ismini şimdilik "nasil-usta-olurum.html" yaptım -->
+            <a href="nasil-usta-olurum.html" target="_blank" class="usta-ol-kutu">
+                <div class="usta-ol-ikon">🚀</div>
+                <h3>NASIL USTA OLURUM?</h3>
+                <p>Yeteneklerini kazanca çevir! Kendi profilini oluştur, fiyatını belirle ve hemen iş almaya başla. 💡💸</p>
+                <span class="usta-ol-ok">Tıkla ve Öğren →</span>
+            </a>
+        </div>
+
     </div>
 
     <!-- ── HAKKIMIZDA ────────────────────────────────── -->
@@ -584,7 +328,7 @@
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
-    <!-- ── İLETİŞİM MODAL ────────────────────────────── -->
+    <!-- ── MODALLAR VE FOOTER AYNEN DURUYOR ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
@@ -603,7 +347,6 @@
         </div>
     </div>
 
-    <!-- ── GİRİŞ MODALİ ──────────────────────────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
@@ -623,7 +366,6 @@
         </div>
     </div>
 
-    <!-- ── FOOTER (SAYFA ALTI) ───────────────────────── -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-linkler">
