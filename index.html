@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorustaya | Usta Bulma ve Hizmet Platformu</title>
-    <meta name="description" content="Elektrikçi, tesisatçı, boyacı ve diğer ustaları kolayca bulun. Sorustaya ile işi ustasına sor.">
-    <meta property="og:title" content="Sorustaya | Usta Bulma ve Hizmet Platformu">
-    <meta property="og:description" content="İşi ustasına sor. Güvenilir ustalar, hızlı hizmet.">
+    <title>Sorustaya | Yetenek ve Hizmet Pazaryeri</title>
+    <meta name="description" content="İngilizce dersinden yazılıma, tesisattan tasarıma kadar aradığın her konuda yetenekli ustaları ve uzmanları bul. İşi ustasına sor!">
+    <meta property="og:title" content="Sorustaya | Yetenek ve Hizmet Pazaryeri">
+    <meta property="og:description" content="Aradığın her konuda yetenekli uzmanları ve ustaları tek bir yerde bul. Güvenilir profiller, hızlı hizmet.">
     <meta property="og:image" content="https://sorustaya.com/logo3.png">
     <meta property="og:url" content="https://sorustaya.com">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo3.png?v=2" type="image/png">
     <link rel="shortcut icon" href="logo3.png?v=2" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #FFD700;
@@ -187,7 +187,7 @@
         /* ─── HERO ───────────────────────────────────── */
         .hero {
             text-align: center;
-            padding: 50px 20px 50px;
+            padding: 50px 20px 30px;
         }
 
         .hero-title {
@@ -222,80 +222,92 @@
             text-transform: uppercase;
         }
 
-        .hero-divider {
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 20px auto 40px;
-            border-radius: 2px;
-        }
-
-        /* ─── HİZMET KARTLARI ────────────────────────── */
-        .hizmetler-bolum {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 820px;
+        /* ─── BIONLUK TARZI ARAMA BÖLÜMÜ ─────────────── */
+        .arama-bolumu {
+            max-width: 750px;
             margin: 0 auto 60px;
             padding: 0 20px;
-        }
-
-        .hizmet-kart {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 30px 20px 24px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-            transition: transform 0.22s, box-shadow 0.22s;
-            position: relative;
+        }
+
+        .arama-kutusu {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
             overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        .hizmet-kart::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--gold);
+        .arama-kutusu:focus-within {
+            border-color: var(--gold);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
         }
 
-        .hizmet-kart:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        .arama-input {
+            flex: 1;
+            border: none;
+            padding: 20px 30px;
+            font-size: 1.1rem;
+            font-family: 'Nunito', sans-serif;
+            outline: none;
+            color: #1a1a1a;
         }
 
-        .hizmet-ikon {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-            line-height: 1;
+        .arama-input::placeholder {
+            color: #999;
+            font-weight: 400;
         }
 
-        .hizmet-kart h3 {
+        .arama-btn {
+            background-color: var(--gold);
+            color: #000;
+            border: none;
+            padding: 0 40px;
             font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .arama-btn:hover {
+            background-color: #1a1a1a;
             color: var(--gold);
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
         }
 
-        .hizmet-kart p {
-            color: rgba(255,255,255,0.55);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 14px;
+        .populer-aramalar {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
         }
 
-        .hizmet-yakinda {
-            display: inline-block;
-            padding: 3px 12px;
-            border: 1px solid rgba(255,215,0,0.4);
+        .populer-baslik {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .arama-etiketi {
+            background: #1a1a1a;
+            color: var(--gold);
+            padding: 6px 16px;
             border-radius: 20px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,215,0,0.6);
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .arama-etiketi:hover {
+            background: #000;
+            transform: translateY(-2px);
         }
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
@@ -373,440 +385,94 @@
         }
 
         /* ─── MODAL ──────────────────────────────────── */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(20,20,20,0.75);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-overlay.aktif {
-            display: flex;
-        }
-
-        .modal-kutu {
-            background: #222222;
-            border: 2px solid var(--gold);
-            border-radius: 14px;
-            padding: 36px 34px 32px;
-            width: 380px;
-            max-width: 90vw;
-            position: relative;
-            animation: modalAc 0.25s ease;
-        }
-
-        @keyframes modalAc {
-            from { opacity: 0; transform: scale(0.92) translateY(-12px); }
-            to   { opacity: 1; transform: scale(1)    translateY(0); }
-        }
-
-        .modal-kapat {
-            position: absolute;
-            top: 14px;
-            right: 16px;
-            background: var(--gold);
-            color: #000;
-            border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 900;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            transition: background 0.2s;
-        }
-
-        .modal-kapat:hover {
-            background: #fff;
-        }
-
-        .modal-baslik {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-            border-bottom: 1px solid rgba(255,215,0,0.2);
-            padding-bottom: 14px;
-        }
-
-        .modal-satir {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .modal-satir p {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1.6;
-        }
-
-        .modal-satir a {
-            color: var(--gold);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .modal-satir a:hover {
-            color: #fff;
-        }
-
-        .modal-sosyal {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            margin-top: 4px;
-            text-decoration: none;
-            color: var(--gold);
-            font-family: 'Nunito', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .modal-sosyal:hover {
-            color: #fff;
-        }
-
-        .modal-sosyal-row {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            margin-top: 4px;
-        }
-
-        .modal-sosyal-row a {
-            color: var(--gold);
-            font-family: 'Nunito', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: color 0.2s;
-        }
-
-        .modal-sosyal-row a:hover {
-            color: #fff;
-        }
-
-        .modal-sosyal-logo {
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            flex-shrink: 0;
-        }
-
-        .modal-sosyal-logo:hover {
-            transform: scale(1.12);
-            box-shadow: 0 4px 14px rgba(255,215,0,0.4);
-        }
+        /* ... (Modal CSS kodları tamamen aynı kalıyor) ... */
+        .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(20,20,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
+        .modal-overlay.aktif { display: flex; }
+        .modal-kutu { background: #222222; border: 2px solid var(--gold); border-radius: 14px; padding: 36px 34px 32px; width: 380px; max-width: 90vw; position: relative; animation: modalAc 0.25s ease; }
+        @keyframes modalAc { from { opacity: 0; transform: scale(0.92) translateY(-12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-kapat { position: absolute; top: 14px; right: 16px; background: var(--gold); color: #000; border: none; width: 28px; height: 28px; border-radius: 6px; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.2s; }
+        .modal-kapat:hover { background: #fff; }
+        .modal-baslik { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 22px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 14px; }
+        .modal-satir { display: flex; flex-direction: column; gap: 14px; }
+        .modal-satir p { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1.6; }
+        .modal-satir a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+        .modal-satir a:hover { color: #fff; }
+        .modal-sosyal { display: inline-flex; align-items: center; gap: 9px; margin-top: 4px; text-decoration: none; color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; transition: color 0.2s; }
+        .modal-sosyal:hover { color: #fff; }
+        .modal-sosyal-row { display: flex; align-items: center; gap: 9px; margin-top: 4px; }
+        .modal-sosyal-row a { color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .modal-sosyal-row a:hover { color: #fff; }
+        .modal-sosyal-logo { width: 30px; height: 30px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; }
+        .modal-sosyal-logo:hover { transform: scale(1.12); box-shadow: 0 4px 14px rgba(255,215,0,0.4); }
 
         /* ─── GİRİŞ MODALİ ──────────────────────────── */
-        .form-grup {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .form-grup label {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.82rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,215,0,0.7);
-        }
-
-        .form-input {
-            width: 100%;
-            background: #2c2c2c;
-            border: 1px solid rgba(255,215,0,0.25);
-            border-radius: 7px;
-            padding: 10px 14px;
-            color: #fff;
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-input:focus {
-            border-color: var(--gold);
-        }
-
-        .form-input::placeholder {
-            color: rgba(255,255,255,0.25);
-        }
-
-        .giris-submit {
-            width: 100%;
-            margin-top: 6px;
-            padding: 12px;
-            background-color: var(--gold);
-            color: #000;
-            border: none;
-            border-radius: 7px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .giris-submit:hover {
-            background-color: #e6c200;
-            transform: translateY(-2px);
-        }
-
-        .giris-submit:active {
-            transform: translateY(0);
-        }
-
-        .kayit-link {
-            text-align: center;
-            margin-top: 18px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255,215,0,0.15);
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.45);
-        }
-
-        .kayit-link a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.2s;
-        }
-
-        .kayit-link a:hover {
-            color: #fff;
-        }
+        .form-grup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+        .form-grup label { font-family: 'Oswald', sans-serif; font-size: 0.82rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); }
+        .form-input { width: 100%; background: #2c2c2c; border: 1px solid rgba(255,215,0,0.25); border-radius: 7px; padding: 10px 14px; color: #fff; font-family: 'Nunito', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+        .form-input:focus { border-color: var(--gold); }
+        .form-input::placeholder { color: rgba(255,255,255,0.25); }
+        .giris-submit { width: 100%; margin-top: 6px; padding: 12px; background-color: var(--gold); color: #000; border: none; border-radius: 7px; font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+        .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
+        .giris-submit:active { transform: translateY(0); }
+        .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
+        .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+        .kayit-link a:hover { color: #fff; }
 
         /* ─── FOOTER ─────────────────────────────────── */
-        .site-footer {
-            background: #111111;
-            border-top: 2px solid var(--gold);
-            padding: 28px 20px;
-            text-align: center;
-        }
-
-        .footer-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-inner > p {
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .footer-linkler {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-linkler a {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,215,0,0.7);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
+        .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; }
+        .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .footer-inner > p { font-family: 'Nunito', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+        .footer-linkler { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+        .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; transition: color 0.2s; }
         .footer-linkler a:hover { color: var(--gold); }
 
         /* ─── HAMBURGER MENÜ ─────────────────────────── */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 26px;
-            height: 19px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            flex-shrink: 0;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 2.5px;
-            background-color: #000;
-            border-radius: 2px;
-            transition: all 0.28s ease;
-        }
-
+        .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 26px; height: 19px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
+        .hamburger span { display: block; width: 100%; height: 2.5px; background-color: #000; border-radius: 2px; transition: all 0.28s ease; }
         .hamburger.acik span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
         .hamburger.acik span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.acik span:nth-child(3) { transform: translateY(-8.25px) rotate(-45deg); }
 
         /* ─── MOBİL MENÜ ─────────────────────────────── */
-        .mobil-menu {
-            display: none;
-            position: fixed;
-            top: 46px;
-            left: 0;
-            right: 0;
-            z-index: 998;
-            background: var(--gold);
-            box-shadow: 0 5px 18px rgba(0,0,0,0.3);
-            max-height: calc(100vh - 46px);
-            overflow-y: auto;
-            padding-bottom: 30px;
-        }
-
+        .mobil-menu { display: none; position: fixed; top: 46px; left: 0; right: 0; z-index: 998; background: var(--gold); box-shadow: 0 5px 18px rgba(0,0,0,0.3); max-height: calc(100vh - 46px); overflow-y: auto; padding-bottom: 30px; }
         .mobil-menu.acik { display: block; }
-
-        .mobil-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            top: 46px;
-            z-index: 997;
-            background: rgba(0,0,0,0.35);
-        }
-
+        .mobil-overlay { display: none; position: fixed; inset: 0; top: 46px; z-index: 997; background: rgba(0,0,0,0.35); }
         .mobil-overlay.acik { display: block; }
-
         body.menu-acik { overflow: hidden; }
-
-        .mobil-menu > a {
-            display: block;
-            padding: 13px 22px;
-            color: #000;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            transition: background 0.15s;
-        }
-
+        .mobil-menu > a { display: block; padding: 13px 22px; color: #000; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); transition: background 0.15s; }
         .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
-
         .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
-
-        .mobil-kategori-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 13px 22px;
-            background: none;
-            border: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            color: #000;
-            transition: background 0.15s;
-        }
-
+        .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; transition: background 0.15s; }
         .mobil-kategori-btn:hover { background: rgba(0,0,0,0.07); }
-
-        .mobil-arrow {
-            font-size: 0.65rem;
-            transition: transform 0.25s;
-            flex-shrink: 0;
-        }
-
+        .mobil-arrow { font-size: 0.65rem; transition: transform 0.25s; flex-shrink: 0; }
         .mobil-kategori-btn.acik .mobil-arrow { transform: rotate(180deg); }
-
-        .mobil-alt-menu {
-            display: none;
-            background: rgba(0,0,0,0.06);
-        }
-
+        .mobil-alt-menu { display: none; background: rgba(0,0,0,0.06); }
         .mobil-alt-menu.acik { display: block; }
-
-        .mobil-alt-menu a {
-            display: block;
-            padding: 10px 22px 10px 38px;
-            color: #111;
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: background 0.15s, padding-left 0.15s;
-        }
-
+        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); transition: background 0.15s, padding-left 0.15s; }
         .mobil-alt-menu a:last-child { border-bottom: none; }
         .mobil-alt-menu a:hover { background: rgba(0,0,0,0.06); padding-left: 46px; }
-
-        .giris-btn-mobil {
-            display: block;
-            width: calc(100% - 44px);
-            margin: 16px 22px 6px;
-            padding: 12px;
-            background: #000;
-            color: var(--gold);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-align: center;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
+        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; transition: background 0.2s; }
         .giris-btn-mobil:hover { background: #222; }
 
         /* ─── MOBİL GENEL UYUMLULUK ──────────────────── */
         @media (max-width: 768px) {
-            .navbar-inner {
-                grid-template-columns: 1fr auto;
-                padding: 0 16px;
-            }
+            .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
-
-            .hero { padding: 30px 16px 36px; }
+            .hero { padding: 30px 16px 20px; }
             .hero h1 { font-size: 2.4rem; letter-spacing: 2px; }
             .hero-logo { width: 48px; }
             .hero-title { gap: 12px; }
             .hero p { font-size: 0.82rem; letter-spacing: 1px; }
+            
+            .arama-kutusu { flex-direction: column; border-radius: 12px; }
+            .arama-input { padding: 15px 20px; }
+            .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
+            .populer-aramalar { gap: 8px; }
 
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
             .hakkimizda h2 { font-size: 1.5rem; letter-spacing: 2px; }
             .hakkimizda p { font-size: 0.95rem; }
-            .hizmetler-bolum { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; margin-bottom: 40px; }
             .modal-kutu { padding: 28px 22px 24px; }
             .footer-linkler { gap: 16px; }
         }
@@ -814,6 +480,7 @@
 </head>
 <body>
 
+    <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="#" class="navbar-brand">
@@ -823,13 +490,13 @@
             <ul class="navbar-menu">
                 <li><a href="#">Ana Sayfa</a></li>
                 <li>
-                    <a href="#">Hizmetler <span class="arrow">▼</span></a>
+                    <a href="#">Kategoriler <span class="arrow">▼</span></a>
                     <div class="dropdown">
-                        <a href="#">Elektrikçi</a>
-                        <a href="#">Tesisatçı</a>
-                        <a href="#">Boyacı</a>
-                        <a href="#">Tamirci</a>
-                        <a href="#">Tüm Hizmetler →</a>
+                        <a href="#">Eğitim & Ders</a>
+                        <a href="#">Yazılım & Teknoloji</a>
+                        <a href="#">Tasarım & Çeviri</a>
+                        <a href="#">Ev & Tadilat</a>
+                        <a href="#">Tüm Kategoriler →</a>
                     </div>
                 </li>
                 <li>
@@ -851,19 +518,20 @@
         </div>
     </nav>
 
+    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="#">Ana Sayfa</a>
 
         <div class="mobil-kategori">
             <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Hizmetler <span class="mobil-arrow">▼</span>
+                Kategoriler <span class="mobil-arrow">▼</span>
             </button>
             <div class="mobil-alt-menu">
-                <a href="#">Elektrikçi</a>
-                <a href="#">Tesisatçı</a>
-                <a href="#">Boyacı</a>
-                <a href="#">Tamirci</a>
-                <a href="#">Tüm Hizmetler →</a>
+                <a href="#">Eğitim & Ders</a>
+                <a href="#">Yazılım & Teknoloji</a>
+                <a href="#">Tasarım & Çeviri</a>
+                <a href="#">Ev & Tadilat</a>
+                <a href="#">Tüm Kategoriler →</a>
             </div>
         </div>
 
@@ -881,45 +549,42 @@
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         <button class="giris-btn-mobil" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
-
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
+    <!-- ── KARŞILAMA EKRANI (HERO) ───────────────────── -->
     <div class="hero">
         <div class="hero-title">
             <img src="logo3.png" alt="Sorustaya Logo" class="hero-logo">
             <h1>SORUSTAYA</h1>
         </div>
         <p>İşi ustasına sor. Çok yakında burada...</p>
-        <div class="hero-divider"></div>
     </div>
 
-    <div class="hizmetler-bolum">
-        <div class="hizmet-kart">
-            <div class="hizmet-ikon">⚡</div>
-            <h3>Elektrikçi</h3>
-            <p>Güvenilir elektrik tesisatı kurulumu ve arıza onarım hizmetleri.</p>
-            <span class="hizmet-yakinda">Yakında</span>
+    <!-- ── ARAMA BÖLÜMÜ (BIONLUK TARZI) ──────────────── -->
+    <div class="arama-bolumu">
+        <div class="arama-kutusu">
+            <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
+            <button class="arama-btn">ARA</button>
         </div>
-        <div class="hizmet-kart">
-            <div class="hizmet-ikon">🚿</div>
-            <h3>Tesisatçı</h3>
-            <p>Su kaçağı tespiti, tıkanıklık açma ve tüm tesisat çözümleri.</p>
-            <span class="hizmet-yakinda">Yakında</span>
-        </div>
-        <div class="hizmet-kart">
-            <div class="hizmet-ikon">🎨</div>
-            <h3>Boyacı</h3>
-            <p>Profesyonel iç ve dış cephe boya, badana ve dekorasyon hizmetleri.</p>
-            <span class="hizmet-yakinda">Yakında</span>
+        
+        <div class="populer-aramalar">
+            <span class="populer-baslik">Popüler Etiketler:</span>
+            <a href="#" class="arama-etiketi">#ingilizce</a>
+            <a href="#" class="arama-etiketi">#yazılım</a>
+            <a href="#" class="arama-etiketi">#grafiktasarım</a>
+            <a href="#" class="arama-etiketi">#matematik</a>
+            <a href="#" class="arama-etiketi">#çeviri</a>
         </div>
     </div>
 
+    <!-- ── HAKKIMIZDA ────────────────────────────────── -->
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
-        <p>Sorustaya, kullanıcıların güvenilir ustalara ve hizmet sağlayıcılara hızlıca ulaşabilmesini amaçlayan yeni nesil bir hizmet platformudur.</p>
+        <p>Sorustaya, uzmanlık gerektiren her konuda yetenekli kişileri ve hizmet arayanları bir araya getiren yeni nesil bir pazaryeridir.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
+    <!-- ── İLETİŞİM MODAL ────────────────────────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
@@ -938,29 +603,27 @@
         </div>
     </div>
 
+    <!-- ── GİRİŞ MODALİ ──────────────────────────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
             <div class="modal-baslik">Giriş Yap</div>
-
             <div class="form-grup">
                 <label for="giris-mail">E-Posta</label>
                 <input type="email" id="giris-mail" class="form-input" placeholder="ornek@mail.com">
             </div>
-
             <div class="form-grup">
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-
             <button class="giris-submit">Giriş Yap</button>
-
             <div class="kayit-link">
                 Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
             </div>
         </div>
     </div>
 
+    <!-- ── FOOTER (SAYFA ALTI) ───────────────────────── -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-linkler">
@@ -976,18 +639,15 @@
         function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
         function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
         function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
-
         function girisAc()      { document.getElementById('giris-modal').classList.add('aktif'); }
         function girisKapat()   { document.getElementById('giris-modal').classList.remove('aktif'); }
         function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
-
         function menuToggle() {
             document.getElementById('hamburger').classList.toggle('acik');
             document.getElementById('mobil-menu').classList.toggle('acik');
             document.getElementById('mobil-overlay').classList.toggle('acik');
             document.body.classList.toggle('menu-acik');
         }
-
         function kategoriToggle(btn) {
             btn.classList.toggle('acik');
             btn.nextElementSibling.classList.toggle('acik');
