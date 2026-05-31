@@ -58,8 +58,8 @@
         .dropdown a:last-child { border-bottom: none; }
         .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── YENİ: KULLANICI PROFİL MENÜSÜ (GİRİŞ YAPILINCA ÇIKAN) ─── */
-        .kullanici-menusu { position: relative; display: none; /* Varsayılan olarak gizli */ }
+        /* ─── KULLANICI PROFİL MENÜSÜ (GİRİŞ YAPILINCA ÇIKAN) ─── */
+        .kullanici-menusu { position: relative; display: none; }
         .kullanici-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
         .kullanici-btn:hover { background-color: #1a1a1a; color: #fff; }
         .kullanici-dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; right: 0; background-color: #1c1c1c; min-width: 160px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; margin-top: 5px; border-radius: 0 0 6px 6px; }
@@ -79,18 +79,8 @@
             gap: 45px;
         }
 
-        .ust-arama {
-            width: 100%;
-            max-width: 850px;
-        }
-
-        .alt-kutular {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-        }
+        .ust-arama { width: 100%; max-width: 850px; }
+        .alt-kutular { display: flex; flex-direction: row; justify-content: center; gap: 30px; width: 100%; }
 
         /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
         .arama-kutusu { display: flex; background: #fff; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); overflow: hidden; border: 2px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
@@ -107,64 +97,14 @@
 
         /* ─── YÖNLENDİRME KUTULARI (CTA) ────────── */
         .usta-ol-kutu {
-            display: block;
-            flex: 1;
-            background: #1a1a1a;
-            border: 2px dashed var(--gold);
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            display: block; flex: 1; background: #1a1a1a; border: 2px dashed var(--gold); border-radius: 20px; padding: 35px 25px; text-align: center; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; position: relative; overflow: hidden;
         }
-
-        .usta-ol-kutu:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            background: #111111;
-        }
-
-        .usta-ol-ikon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-
-        .usta-ol-kutu h3 {
-            color: var(--gold);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .usta-ol-kutu p {
-            color: rgba(255,255,255,0.8);
-            font-family: 'Nunito', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
-
-        .usta-ol-ok {
-            display: inline-block;
-            background: var(--gold);
-            color: #000;
-            font-family: 'Oswald', sans-serif;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: background 0.2s;
-        }
-
-        .usta-ol-kutu:hover .usta-ol-ok {
-            background: #fff;
-        }
+        .usta-ol-kutu:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); background: #111111; }
+        .usta-ol-ikon { font-size: 3.5rem; margin-bottom: 15px; line-height: 1; }
+        .usta-ol-kutu h3 { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 12px; }
+        .usta-ol-kutu p { color: rgba(255,255,255,0.8); font-family: 'Nunito', sans-serif; font-size: 1rem; line-height: 1.6; margin-bottom: 22px; }
+        .usta-ol-ok { display: inline-block; background: var(--gold); color: #000; font-family: 'Oswald', sans-serif; padding: 10px 24px; border-radius: 30px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: background 0.2s; }
+        .usta-ol-kutu:hover .usta-ol-ok { background: #fff; }
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
         .hakkimizda { position: relative; background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('logohakkimda.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-clip: padding-box; border: 2px solid transparent; border-radius: 12px; padding: 45px 40px; max-width: 620px; margin: 40px auto 60px; box-shadow: 0 8px 40px rgba(0,0,0,0.18); text-align: center; }
@@ -201,6 +141,7 @@
         .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
         .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+        #giris-hata { color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold; }
 
         /* ─── FOOTER ─────────────────────────────────── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; }
@@ -236,14 +177,11 @@
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
-            
             .ana-icerik { margin: 40px auto; gap: 40px; }
             .alt-kutular { flex-direction: column; gap: 20px; }
-            
             .arama-kutusu { flex-direction: column; border-radius: 12px; }
             .arama-input { padding: 18px 20px; }
             .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
-
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
         }
     </style>
@@ -252,12 +190,22 @@
 
     <nav class="navbar">
         <div class="navbar-inner">
-            <a href="#" class="navbar-brand">
+            <a href="index.html" class="navbar-brand">
                 <img src="logo3.png" alt="Sorustaya Logo" class="navbar-logo">
                 Sorustaya
             </a>
             <ul class="navbar-menu">
                 <li><a href="index.html">Ana Sayfa</a></li>
+                <li>
+                    <a href="#">Kategoriler <span class="arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="#">Eğitim & Ders</a>
+                        <a href="#">Yazılım & Teknoloji</a>
+                        <a href="#">Tasarım & Çeviri</a>
+                        <a href="#">Ev & Tadilat</a>
+                        <a href="#">Tüm Kategoriler →</a>
+                    </div>
+                </li>
                 <li>
                     <a href="#">Kurumsal <span class="arrow">▼</span></a>
                     <div class="dropdown">
@@ -275,8 +223,8 @@
                     <button class="kullanici-btn">Profilim <span class="arrow">▼</span></button>
                     <div class="kullanici-dropdown">
                         <a href="profil.html">Profile Git</a>
-                        <a href="#">Seçenekler</a>
-                        <a href="#" onclick="cikisYapDemo(); return false;">Çıkış Yap</a>
+                        <a href="#">Ayarlar</a>
+                        <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
                     </div>
                 </div>
             </div>
@@ -295,11 +243,22 @@
             </button>
             <div class="mobil-alt-menu">
                 <a href="profil.html">Profile Git</a>
-                <a href="#">Seçenekler</a>
-                <a href="#" onclick="cikisYapDemo(); return false;">Çıkış Yap</a>
+                <a href="#">Ayarlar</a>
+                <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
             </div>
         </div>
 
+        <div class="mobil-kategori">
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
+                Kategoriler <span class="mobil-arrow">▼</span>
+            </button>
+            <div class="mobil-alt-menu">
+                <a href="#">Eğitim & Ders</a>
+                <a href="#">Yazılım & Teknoloji</a>
+                <a href="#">Tasarım & Çeviri</a>
+                <a href="#">Ev & Tadilat</a>
+            </div>
+        </div>
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         
         <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
@@ -307,7 +266,6 @@
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
     <div class="ana-icerik">
-        
         <div class="ust-arama">
             <div class="arama-kutusu">
                 <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
@@ -322,7 +280,6 @@
                 <a href="#" class="arama-etiketi">#çeviri</a>
             </div>
         </div>
-
         <div class="alt-kutular">
             <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
                 <div class="usta-ol-ikon">🚀</div>
@@ -330,7 +287,6 @@
                 <p>Yeteneklerini kazanca çevir! Kendi profilini oluştur, fiyatını belirle ve hemen iş almaya başla. 💡💸</p>
                 <span class="usta-ol-ok">Tıkla ve Öğren →</span>
             </a>
-
             <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;">
                 <div class="usta-ol-ikon">🤨</div>
                 <h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3>
@@ -338,7 +294,6 @@
                 <span class="usta-ol-ok" style="background: #ff6b6b; color: #fff;">Güvenceni Gör →</span>
             </a>
         </div>
-
     </div>
 
     <div class="hakkimizda">
@@ -371,13 +326,14 @@
             <div class="modal-baslik">Giriş Yap</div>
             <div class="form-grup">
                 <label for="giris-mail">E-Posta</label>
-                <input type="email" id="giris-mail" class="form-input" placeholder="ornek@mail.com">
+                <input type="text" id="giris-mail" class="form-input" placeholder="E-postanızı girin">
             </div>
             <div class="form-grup">
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-            <button class="giris-submit" onclick="girisYapDemo()">Giriş Yap</button>
+            <div id="giris-hata">Hatalı E-Posta veya Şifre!</div>
+            <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
             <div class="kayit-link">
                 Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
             </div>
@@ -399,4 +355,77 @@
         function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
         function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
         function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
-        function girisAc()      { document.getElementById('giris-modal').classList.add
+        function girisAc()      { 
+            document.getElementById('giris-modal').classList.add('aktif'); 
+            document.getElementById('giris-hata').style.display = 'none'; // Hatayı sıfırla
+            document.getElementById('giris-mail').value = '';
+            document.getElementById('giris-sifre').value = '';
+        }
+        function girisKapat()   { document.getElementById('giris-modal').classList.remove('aktif'); }
+        function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
+        function menuToggle() {
+            document.getElementById('hamburger').classList.toggle('acik');
+            document.getElementById('mobil-menu').classList.toggle('acik');
+            document.getElementById('mobil-overlay').classList.toggle('acik');
+            document.body.classList.toggle('menu-acik');
+        }
+        function kategoriToggle(btn) {
+            btn.classList.toggle('acik');
+            btn.nextElementSibling.classList.toggle('acik');
+        }
+
+        /* ─── TARAYICI HAFIZASI İLE GİRİŞ SİSTEMİ ─── */
+        
+        // Sayfa her yüklendiğinde hafızayı kontrol et
+        document.addEventListener("DOMContentLoaded", function() {
+            girisDurumunuKontrolEt();
+        });
+
+        // Giriş butonuna basılınca çalışacak asıl kod
+        function sistemeGirisYap() {
+            var mail = document.getElementById('giris-mail').value;
+            var sifre = document.getElementById('giris-sifre').value;
+
+            // Eğer girdiği şifreler "admin" ise
+            if (mail === 'admin' && sifre === 'admin') {
+                // Tarayıcı hafızasına 'admin' olarak kaydet
+                localStorage.setItem('sorustaya_giris', 'admin');
+                girisKapat(); // Modalı kapat
+                girisDurumunuKontrolEt(); // Arayüzü güncelle
+            } else {
+                // Hatalıysa kırmızı uyarı ver
+                document.getElementById('giris-hata').style.display = 'block';
+            }
+        }
+
+        // Çıkış yap butonuna basılınca hafızayı sil
+        function cikisYap() {
+            localStorage.removeItem('sorustaya_giris');
+            girisDurumunuKontrolEt();
+            if(document.body.classList.contains('menu-acik')) {
+                menuToggle();
+            }
+        }
+
+        // Arayüzü (Menüleri) hafızaya göre değiştiren kod
+        function girisDurumunuKontrolEt() {
+            var girisYapan = localStorage.getItem('sorustaya_giris');
+            
+            if (girisYapan === 'admin') {
+                // GİRİŞ YAPILMIŞ: Butonları gizle, profil menülerini aç
+                document.getElementById('btn-giris-yap').style.display = 'none';
+                document.getElementById('menu-kullanici').style.display = 'block';
+                document.getElementById('mobil-btn-giris').style.display = 'none';
+                document.getElementById('mobil-menu-kullanici').style.display = 'block';
+            } else {
+                // ÇIKIŞ YAPILMIŞ: Profil menülerini gizle, butonları aç
+                document.getElementById('btn-giris-yap').style.display = 'block';
+                document.getElementById('menu-kullanici').style.display = 'none';
+                document.getElementById('mobil-btn-giris').style.display = 'block';
+                document.getElementById('mobil-menu-kullanici').style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
