@@ -147,24 +147,23 @@
             padding-left: 26px;
         }
 
-        /* ─── HEADER / LOGO ──────────────────────────── */
-        .main-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px 10px;
-        }
-
-        .logo {
-            width: 75px;
-            height: auto;
-            filter: drop-shadow(0 0 12px rgba(255,215,0,0.3));
-        }
-
         /* ─── HERO ───────────────────────────────────── */
         .hero {
             text-align: center;
-            padding: 20px 20px 50px;
+            padding: 50px 20px 50px;
+        }
+
+        .hero-title {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+        }
+
+        .hero-logo {
+            width: 75px;
+            height: auto;
+            filter: drop-shadow(0 0 14px rgba(255,215,0,0.35));
         }
 
         .hero h1 {
@@ -174,6 +173,7 @@
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
+            margin: 0;
         }
 
         .hero p {
@@ -247,7 +247,9 @@
 
         /* ─── MOBİL ──────────────────────────────────── */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.8rem; letter-spacing: 5px; }
+            .hero h1 { font-size: 2.8rem; letter-spacing: 2px; }
+            .hero-logo { width: 50px; }
+            .hero-title { gap: 14px; }
             .navbar-inner { padding: 0 15px; }
             .navbar-menu > li > a { padding: 0 10px; font-size: 0.78rem; }
             .hakkimizda { margin: 0 15px 50px; padding: 30px 25px; }
@@ -301,14 +303,12 @@
         </div>
     </nav>
 
-    <!-- ── LOGO ──────────────────────────────────────── -->
-    <header class="main-header">
-        <img src="logo2.png" alt="Sorustaya Logo" class="logo">
-    </header>
-
     <!-- ── HERO ──────────────────────────────────────── -->
     <div class="hero">
-        <h1>SORUSTAYA</h1>
+        <div class="hero-title">
+            <img src="logo2.png" alt="Sorustaya Logo" class="hero-logo">
+            <h1>SORUSTAYA</h1>
+        </div>
         <p>İşi ustasına sor. Çok yakında burada...</p>
         <div class="hero-divider"></div>
     </div>
