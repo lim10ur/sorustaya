@@ -21,9 +21,10 @@
         }
 
         body {
-            background-color: var(--dark);
-            color: var(--white);
+            background: linear-gradient(160deg, #ffffff 0%, #ececec 100%);
+            color: #1a1a1a;
             font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
         }
 
         /* ─── NAVBAR ─────────────────────────────────── */
@@ -163,12 +164,12 @@
         .hero-logo {
             width: 75px;
             height: auto;
-            filter: drop-shadow(0 0 14px rgba(255,215,0,0.35));
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
         }
 
         .hero h1 {
             font-family: 'Oswald', sans-serif;
-            color: var(--gold);
+            color: #1a1a1a;
             font-size: 4.5rem;
             font-weight: 700;
             letter-spacing: 4px;
@@ -177,11 +178,11 @@
         }
 
         .hero p {
-            color: rgba(255,255,255,0.55);
+            color: #666666;
             font-size: 1rem;
             margin-top: 10px;
             letter-spacing: 2px;
-            font-weight: 300;
+            font-weight: 400;
             text-transform: uppercase;
         }
 
@@ -201,11 +202,12 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 2px solid var(--gold);
+            border: 2px solid #888888;
             border-radius: 12px;
             padding: 45px 40px;
             max-width: 620px;
             margin: 0 auto 60px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.18);
         }
 
         .hakkimizda h2 {
@@ -236,13 +238,22 @@
             font-size: 1.15rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: all 0.25s;
+            transition: all 0.22s ease;
             border: 2px solid var(--gold);
+            cursor: pointer;
         }
 
         .iletisim-butonu:hover {
-            background-color: transparent;
+            background-color: #1a1a1a;
             color: var(--gold);
+            border-color: #1a1a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+        }
+
+        .iletisim-butonu:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         /* ─── MODAl ──────────────────────────────────── */
