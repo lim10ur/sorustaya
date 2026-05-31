@@ -5,84 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorustaya</title>
     <style>
+        /* Header ve Logo Ayarları */
         .main-header {
-  display: flex; /* Esnek kutu modelini aktif et */
-  justify-content: flex-start; /* İçerikleri (logoyu) sol başa yasla */
-  align-items: center; /* Dikeyde ortala (eğer header yüksekse) */
-  padding: 10px 20px; /* Üstten-alttan 10px, soldan-sağdan 20px boşluk bırak */
-  background-color: transparent; /* Arka planı şeffaf yap (veya istediğin renk) */
-  width: 100%; /* Ekranın tamamını kaplasın */
-  position: absolute; /* Sayfanın en üstüne sabitlemek için (isteğe bağlı) */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Diğer içeriklerin üstünde kalsın */
-}
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: transparent;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
 
-/* 2. Logonun kendisi için (zaten küçülttün ama garantiye alalım) */
-.logo {
-  width: auto; /* Genişliği otomatik ayarla, oran bozulmasın */
-  display: block; /* Altındaki boşlukları siler */
-}
+        .logo {
+            width: 150px; /* Boyutu CSS'ten veriyoruz */
+            height: auto;
+            display: block;
+        }
         
         body {
-        background-color: #1a1a1a;
-        color: #fff;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 50px 20px;
-    }
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            /* Header absolute olduğu için içerik yukarı yapışmasın diye padding veriyoruz */
+            padding-top: 100px; 
+            padding-bottom: 50px;
+        }
 
-    h1 { color: #FFD700; }
-    h2 { color: #FFD700; }
+        h1 { color: #FFD700; }
+        h2 { color: #FFD700; }
 
-    .hakkimizda {
-        /* Buradaki linear-gradient resmin üzerine hafif siyahlık atar, yazıyı okutur */
-        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('logohakkimda.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        
-        /* Kutu Ayarları */
-        border: 3px solid #FFD700;
-        border-radius: 15px;
-        padding: 40px;
-        max-width: 600px;
-        margin: 40px auto;
-    }
+        .hakkimizda {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('logohakkimda.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
 
-    .iletisim-butonu {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 15px 30px;
-        background-color: #FFD700;
-        color: #000;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: all 0.3s;
-        border: 2px solid #FFD700;
-    }
+        .iletisim-butonu {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background-color: #FFD700;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #FFD700;
+        }
 
-    .iletisim-butonu:hover {
-        background-color: #000;
-        color: #FFD700;
-        border: 2px solid #FFD700;
-    }
+        .iletisim-butonu:hover {
+            background-color: #000;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+        }
     </style>
 </head>
 <body>
-<header class="main-header"></header>
-    <img src="logo1.svg" alt="Sorustaya Logo" style="width: 150px; height: auto;">
-</header>
+
+    <header class="main-header">
+        <img src="logo2.png" alt="Sorustaya Logo" class="logo">
+    </header>
+
     <h1>SORUSTAYA</h1>
     <p>İşi ustasına sor. Çok yakında burada...</p>
 
     <div class="hakkimizda">
-        
         <h2>Hakkımızda</h2>
         <p>GELİYO GELİYO ÇOK TAŞŞAKLI Bİ ŞEY GELİYOR :D</p>
-        
         <a href="mailto:senin-mailin@gmail.com" class="iletisim-butonu">Bize Ulaşın</a>
     </div>
 
