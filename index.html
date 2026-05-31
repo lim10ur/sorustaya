@@ -47,13 +47,21 @@
         }
 
         .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
             font-family: 'Oswald', sans-serif;
             font-size: 1.15rem;
             font-weight: 700;
             color: #000;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
             text-decoration: none;
             text-transform: uppercase;
+        }
+
+        .navbar-logo {
+            width: 30px;
+            height: auto;
         }
 
         .navbar-menu {
@@ -164,7 +172,7 @@
             color: var(--gold);
             font-size: 4.5rem;
             font-weight: 700;
-            letter-spacing: 10px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
@@ -188,7 +196,7 @@
         /* ─── HAKKIMIZDA ─────────────────────────────── */
         .hakkimizda {
             background-image:
-                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
                 url('logohakkimda.png');
             background-size: cover;
             background-position: center;
@@ -223,9 +231,9 @@
             color: #000;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: 700;
+            font-weight: 900;
             font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
+            font-size: 1.15rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.25s;
@@ -251,7 +259,10 @@
     <!-- ── NAVBAR ────────────────────────────────────── -->
     <nav class="navbar">
         <div class="navbar-inner">
-            <a href="#" class="navbar-brand">Sorustaya</a>
+            <a href="#" class="navbar-brand">
+                <img src="logo2.png" alt="Sorustaya Logo" class="navbar-logo">
+                Sorustaya
+            </a>
             <ul class="navbar-menu">
 
                 <li>
