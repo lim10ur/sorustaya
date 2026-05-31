@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorustaya</title>
+    <title>Sorustaya | Usta Bulma ve Hizmet Platformu</title>
+    <meta name="description" content="Elektrikçi, tesisatçı, boyacı ve diğer ustaları kolayca bulun. Sorustaya ile işi ustasına sor.">
+    <meta property="og:title" content="Sorustaya | Usta Bulma ve Hizmet Platformu">
+    <meta property="og:description" content="İşi ustasına sor. Güvenilir ustalar, hızlı hizmet.">
+    <meta property="og:image" content="https://sorustaya.com/logo3.png">
+    <meta property="og:url" content="https://sorustaya.com">
+    <meta property="og:type" content="website">
     <link rel="icon" href="logo3.png?v=2" type="image/png">
     <link rel="shortcut icon" href="logo3.png?v=2" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
@@ -525,6 +531,116 @@
             color: #fff;
         }
 
+        /* ─── HİZMET KARTLARI ────────────────────────── */
+        .hizmetler-bolum {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 820px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .hizmet-kart {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px 20px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            transition: transform 0.22s, box-shadow 0.22s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hizmet-kart::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .hizmet-kart:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        }
+
+        .hizmet-ikon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .hizmet-kart h3 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hizmet-kart p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .hizmet-yakinda {
+            display: inline-block;
+            padding: 3px 12px;
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,215,0,0.6);
+        }
+
+        /* ─── FOOTER ─────────────────────────────────── */
+        .site-footer {
+            background: #111111;
+            border-top: 2px solid var(--gold);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-inner > p {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-linkler {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-linkler a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,215,0,0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-linkler a:hover { color: var(--gold); }
+
         /* ─── HAMBURGEr ──────────────────────────────── */
         .hamburger {
             display: none;
@@ -690,8 +806,9 @@
 
             .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
             .hakkimizda h2 { font-size: 1.5rem; letter-spacing: 2px; }
-
+            .hizmetler-bolum { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; margin-bottom: 40px; }
             .modal-kutu { padding: 28px 22px 24px; }
+            .footer-linkler { gap: 16px; }
         }
     </style>
 </head>
