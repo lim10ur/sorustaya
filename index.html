@@ -22,7 +22,11 @@
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background: linear-gradient(160deg, #ffffff 0%, #ececec 100%);
@@ -52,9 +56,28 @@
         .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
         /* ─── ANA İÇERİK DÜZENİ ───────────────── */
-        .ana-icerik { display: flex; flex-direction: column; align-items: center; max-width: 1100px; margin: 60px auto; padding: 0 20px; gap: 45px; }
-        .ust-arama { width: 100%; max-width: 850px; }
-        .alt-kutular { display: flex; flex-direction: row; justify-content: center; gap: 30px; width: 100%; }
+        .ana-icerik {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            gap: 45px;
+        }
+
+        .ust-arama {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .alt-kutular {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
 
         /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
         .arama-kutusu { display: flex; background: #fff; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); overflow: hidden; border: 2px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
@@ -63,19 +86,72 @@
         .arama-input::placeholder { color: #999; font-weight: 400; }
         .arama-btn { background-color: var(--gold); color: #000; border: none; padding: 0 40px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
         .arama-btn:hover { background-color: #1a1a1a; color: var(--gold); }
+        
         .populer-aramalar { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; }
         .populer-baslik { font-size: 0.95rem; color: #666; font-weight: 600; margin-right: 5px; }
         .arama-etiketi { background: #1a1a1a; color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: transform 0.2s, background 0.2s; }
         .arama-etiketi:hover { background: #000; transform: translateY(-2px); }
 
         /* ─── YÖNLENDİRME KUTULARI (CTA) ────────── */
-        .usta-ol-kutu { display: block; flex: 1; background: #1a1a1a; border: 2px dashed var(--gold); border-radius: 20px; padding: 35px 25px; text-align: center; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; position: relative; overflow: hidden; }
-        .usta-ol-kutu:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); background: #111111; }
-        .usta-ol-ikon { font-size: 3.5rem; margin-bottom: 15px; line-height: 1; }
-        .usta-ol-kutu h3 { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 12px; }
-        .usta-ol-kutu p { color: rgba(255,255,255,0.8); font-family: 'Nunito', sans-serif; font-size: 1rem; line-height: 1.6; margin-bottom: 22px; }
-        .usta-ol-ok { display: inline-block; background: var(--gold); color: #000; font-family: 'Oswald', sans-serif; padding: 10px 24px; border-radius: 30px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: background 0.2s; }
-        .usta-ol-kutu:hover .usta-ol-ok { background: #fff; }
+        .usta-ol-kutu {
+            display: block;
+            flex: 1; /* Kutuların genişliklerini eşitler */
+            background: #1a1a1a;
+            border: 2px dashed var(--gold);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usta-ol-kutu:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            background: #111111;
+        }
+
+        .usta-ol-ikon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .usta-ol-kutu h3 {
+            color: var(--gold);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .usta-ol-kutu p {
+            color: rgba(255,255,255,0.8);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .usta-ol-ok {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            font-family: 'Oswald', sans-serif;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+
+        .usta-ol-kutu:hover .usta-ol-ok {
+            background: #fff;
+        }
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
         .hakkimizda { position: relative; background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('logohakkimda.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-clip: padding-box; border: 2px solid transparent; border-radius: 12px; padding: 45px 40px; max-width: 620px; margin: 40px auto 60px; box-shadow: 0 8px 40px rgba(0,0,0,0.18); text-align: center; }
@@ -98,12 +174,9 @@
         .modal-satir a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
         .modal-satir a:hover { color: #fff; }
         .modal-sosyal { display: inline-flex; align-items: center; gap: 9px; margin-top: 4px; text-decoration: none; color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; transition: color 0.2s; }
-        .modal-sosyal:hover { color: #fff; }
         .modal-sosyal-row { display: flex; align-items: center; gap: 9px; margin-top: 4px; }
         .modal-sosyal-row a { color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
-        .modal-sosyal-row a:hover { color: #fff; }
         .modal-sosyal-logo { width: 30px; height: 30px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; }
-        .modal-sosyal-logo:hover { transform: scale(1.12); box-shadow: 0 4px 14px rgba(255,215,0,0.4); }
 
         /* ─── GİRİŞ MODALİ ──────────────────────────── */
         .form-grup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
@@ -113,10 +186,8 @@
         .form-input::placeholder { color: rgba(255,255,255,0.25); }
         .giris-submit { width: 100%; margin-top: 6px; padding: 12px; background-color: var(--gold); color: #000; border: none; border-radius: 7px; font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
         .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
-        .giris-submit:active { transform: translateY(0); }
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
         .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
-        .kayit-link a:hover { color: #fff; }
 
         /* ─── FOOTER ─────────────────────────────────── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; }
@@ -126,55 +197,41 @@
         .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; transition: color 0.2s; }
         .footer-linkler a:hover { color: var(--gold); }
 
-        /* ─── HAMBURGEr & MOBİL MENÜ ─────────────────── */
+        /* ─── MOBİL MENÜ ve UYUMLULUK ────────────────── */
         .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 26px; height: 19px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
         .hamburger span { display: block; width: 100%; height: 2.5px; background-color: #000; border-radius: 2px; transition: all 0.28s ease; }
         .hamburger.acik span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
         .hamburger.acik span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.acik span:nth-child(3) { transform: translateY(-8.25px) rotate(-45deg); }
-
         .mobil-menu { display: none; position: fixed; top: 46px; left: 0; right: 0; z-index: 998; background: var(--gold); box-shadow: 0 5px 18px rgba(0,0,0,0.3); max-height: calc(100vh - 46px); overflow-y: auto; padding-bottom: 30px; }
         .mobil-menu.acik { display: block; }
         .mobil-overlay { display: none; position: fixed; inset: 0; top: 46px; z-index: 997; background: rgba(0,0,0,0.35); }
         .mobil-overlay.acik { display: block; }
         body.menu-acik { overflow: hidden; }
-
         .mobil-menu > a { display: block; padding: 13px 22px; color: #000; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); transition: background 0.15s; }
         .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
         .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
         .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; transition: background 0.15s; }
-        .mobil-kategori-btn:hover { background: rgba(0,0,0,0.07); }
         .mobil-arrow { font-size: 0.65rem; transition: transform 0.25s; flex-shrink: 0; }
         .mobil-kategori-btn.acik .mobil-arrow { transform: rotate(180deg); }
         .mobil-alt-menu { display: none; background: rgba(0,0,0,0.06); }
         .mobil-alt-menu.acik { display: block; }
-        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); transition: background 0.15s; }
-        .mobil-alt-menu a:last-child { border-bottom: none; }
-        .mobil-alt-menu a:hover { background: rgba(0,0,0,0.06); }
-        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; transition: background 0.2s; }
-        .giris-btn-mobil:hover { background: #222; }
+        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; }
 
-        /* ─── MOBİL GENEL ────────────────────────────── */
         @media (max-width: 768px) {
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
+            
+            .ana-icerik { margin: 40px auto; gap: 40px; }
+            .alt-kutular { flex-direction: column; gap: 20px; }
+            
+            .arama-kutusu { flex-direction: column; border-radius: 12px; }
+            .arama-input { padding: 18px 20px; }
+            .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
 
-            .ana-icerik { margin: 30px auto; gap: 24px; padding: 0 14px; }
-            .alt-kutular { flex-direction: column; gap: 16px; }
-
-            .arama-kutusu { flex-direction: column; border-radius: 16px; }
-            .arama-input { padding: 18px 20px; font-size: 1rem; }
-            .arama-btn { padding: 15px; border-radius: 0 0 14px 14px; }
-
-            .usta-ol-kutu { padding: 28px 20px; }
-            .usta-ol-kutu h3 { font-size: 1.4rem; }
-
-            .hakkimizda { margin: 10px 16px 40px; padding: 28px 20px; }
-            .hakkimizda h2 { font-size: 1.5rem; letter-spacing: 2px; }
-
-            .modal-kutu { padding: 28px 22px 24px; }
-            .footer-linkler { gap: 16px; }
+            .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
         }
     </style>
 </head>
@@ -232,24 +289,15 @@
                 <a href="#">Ev & Tadilat</a>
             </div>
         </div>
-        <div class="mobil-kategori">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Kurumsal <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="#">Hakkımızda</a>
-                <a href="#">Nasıl Çalışır?</a>
-                <a href="#">S.S.S.</a>
-            </div>
-        </div>
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
         <button class="giris-btn-mobil" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── ANA İÇERİK ───────────────────────────────── -->
+    <!-- ── ANA İÇERİK (ARAMA + CTA KUTULARI) ───────────── -->
     <div class="ana-icerik">
-
+        
+        <!-- Üst Taraf: Arama Çubuğu -->
         <div class="ust-arama">
             <div class="arama-kutusu">
                 <input type="text" class="arama-input" placeholder="Hangi konuda uzman lazım? (Örn: İngilizce, Yazılım, Tesisat)">
@@ -265,13 +313,17 @@
             </div>
         </div>
 
+        <!-- Alt Taraf: İki Adet Yönlendirme Kutusu (Yan Yana) -->
         <div class="alt-kutular">
+            <!-- Nasıl Usta Olurum Kutusu -->
             <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
                 <div class="usta-ol-ikon">🚀</div>
                 <h3>NASIL USTA OLURUM?</h3>
                 <p>Yeteneklerini kazanca çevir! Kendi profilini oluştur, fiyatını belirle ve hemen iş almaya başla. 💡💸</p>
                 <span class="usta-ol-ok">Tıkla ve Öğren →</span>
             </a>
+
+            <!-- Ya Kandırılırsam Kutusu -->
             <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;">
                 <div class="usta-ol-ikon">🤨</div>
                 <h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3>
@@ -289,7 +341,7 @@
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
-    <!-- ── İLETİŞİM MODALİ ──────────────────────────── -->
+    <!-- ── MODALLAR VE FOOTER ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
@@ -308,7 +360,6 @@
         </div>
     </div>
 
-    <!-- ── GİRİŞ MODALİ ─────────────────────────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
@@ -328,7 +379,6 @@
         </div>
     </div>
 
-    <!-- ── FOOTER ────────────────────────────────────── -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-linkler">
