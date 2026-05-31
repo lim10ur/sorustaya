@@ -196,18 +196,29 @@
 
         /* ─── HAKKIMIZDA ─────────────────────────────── */
         .hakkimizda {
+            position: relative;
             background-image:
                 linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
                 url('logohakkimda.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 2px solid #888888;
+            background-clip: padding-box;
+            border: 2px solid transparent;
             border-radius: 12px;
             padding: 45px 40px;
             max-width: 620px;
             margin: 0 auto 60px;
             box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+        }
+
+        .hakkimizda::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #FFD700 0%, #aaaaaa 60%, #666666 100%);
+            z-index: -1;
         }
 
         .hakkimizda h2 {
@@ -349,6 +360,35 @@
             color: #fff;
         }
 
+        .modal-sosyal {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 4px;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .modal-sosyal:hover {
+            color: #fff;
+        }
+
+        .modal-insta-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .modal-insta-logo:hover {
+            transform: scale(1.12);
+            box-shadow: 0 4px 14px rgba(255,215,0,0.4);
+        }
+
         /* ─── MOBİL ──────────────────────────────────── */
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.8rem; letter-spacing: 2px; }
@@ -432,6 +472,10 @@
             <div class="modal-satir">
                 <p>Bu projeyi bitirmeliyim.</p>
                 <p>mail: <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a></p>
+                <a href="https://www.instagram.com/lim10ur/?hl=tr" target="_blank" class="modal-sosyal">
+                    <img src="instalogo.png" alt="Instagram" class="modal-insta-logo">
+                    @lim10ur
+                </a>
             </div>
         </div>
     </div>
