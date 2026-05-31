@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorustaya</title>
     <style>
+        .main-header {
+  display: flex; /* Esnek kutu modelini aktif et */
+  justify-content: flex-start; /* İçerikleri (logoyu) sol başa yasla */
+  align-items: center; /* Dikeyde ortala (eğer header yüksekse) */
+  padding: 10px 20px; /* Üstten-alttan 10px, soldan-sağdan 20px boşluk bırak */
+  background-color: transparent; /* Arka planı şeffaf yap (veya istediğin renk) */
+  width: 100%; /* Ekranın tamamını kaplasın */
+  position: absolute; /* Sayfanın en üstüne sabitlemek için (isteğe bağlı) */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Diğer içeriklerin üstünde kalsın */
+}
+
+/* 2. Logonun kendisi için (zaten küçülttün ama garantiye alalım) */
+.logo {
+  width: auto; /* Genişliği otomatik ayarla, oran bozulmasın */
+  display: block; /* Altındaki boşlukları siler */
+}
         
         body {
         background-color: #1a1a1a;
