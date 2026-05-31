@@ -17,47 +17,51 @@
     border-radius: 15px;
     border: 3px solid #000;
 }
-        body
-         {
-            background-color: #1a1a1a; /* Koyu zemin */
-            color: #000; /* Okunabilirlik için beyaz yazı */
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 50px 20px;
-        }
+        body {
+        background-color: #1a1a1a;
+        color: #fff;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 50px 20px;
+    }
 
-        h1, h2 {
-            color: #000; /* Sarı başlıklar */
-        }
+    h1 { color: #FFD700; }
+    h2 { color: #FFD700; }
 
-        .hakkimizda {
-            background-color: #000000; /* Kutu içi siyah */
-            border: 3px solid #FFD700; /* Sarı çerçeve */
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 40px auto;
-        }
+    .hakkimizda {
+        /* Buradaki linear-gradient resmin üzerine hafif siyahlık atar, yazıyı okutur */
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('logohakkimda.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        /* Kutu Ayarları */
+        border: 3px solid #FFD700;
+        border-radius: 15px;
+        padding: 40px;
+        max-width: 600px;
+        margin: 40px auto;
+    }
 
-        .iletisim-butonu {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background-color: #FFD700; /* Sarı arka plan */
-            color: #000000; /* Siyah yazı */
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: 2px solid #FFD700;
-        }
+    .iletisim-butonu {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 15px 30px;
+        background-color: #FFD700;
+        color: #000;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: all 0.3s;
+        border: 2px solid #FFD700;
+    }
 
-        .iletisim-butonu:hover {
-            background-color: #000000; /* Hoverda siyah */
-            color: #000; /* Hoverda sarı yazı */
-            border: 2px solid #FFD700;
-        }
+    .iletisim-butonu:hover {
+        background-color: #000;
+        color: #FFD700;
+        border: 2px solid #FFD700;
+    }
     </style>
 </head>
 <body>
