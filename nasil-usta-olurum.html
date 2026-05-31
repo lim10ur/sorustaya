@@ -9,18 +9,11 @@
     <link rel="shortcut icon" href="logo3.png?v=2" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #FFD700;
-            --gold-dark: #e6c200;
-            --dark: #1a1a1a;
-            --darker: #111111;
-            --white: #ffffff;
-        }
-
+        :root { --gold: #FFD700; --dark: #1a1a1a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: linear-gradient(160deg, #ffffff 0%, #ececec 100%); color: #1a1a1a; font-family: 'Nunito', sans-serif; min-height: 100vh; }
+        body { background: linear-gradient(160deg, #ffffff 0%, #ececec 100%); color: #1a1a1a; font-family: 'Nunito', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
 
-        /* ─── NAVBAR (Ana sayfa ile aynı, Linkler güncellendi) ─── */
+        /* ─── NAVBAR ─── */
         .navbar { background-color: var(--gold); width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 10px rgba(0,0,0,0.5); }
         .navbar-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 30px; height: 46px; max-width: 1200px; margin: 0 auto; }
         .navbar-brand { display: flex; align-items: center; gap: 9px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; color: #000; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; justify-self: start; }
@@ -40,126 +33,36 @@
         .dropdown a:last-child { border-bottom: none; }
         .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── YENİ: HERO BÖLÜMÜ (Arka Plan Görselli) ─── */
-        .usta-hero {
-            position: relative;
-            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('calismapng.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 90px 20px;
-            text-align: center;
-            color: var(--white);
-            border-bottom: 4px solid var(--gold);
-        }
+        /* KULLANICI MENÜSÜ */
+        .kullanici-menusu { position: relative; display: none; }
+        .kullanici-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
+        .kullanici-btn:hover { background-color: #1a1a1a; color: #fff; }
+        .kullanici-dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; right: 0; background-color: #1c1c1c; min-width: 160px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; margin-top: 5px; border-radius: 0 0 6px 6px; }
+        .kullanici-menusu:hover .kullanici-dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
+        .kullanici-dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
+        .kullanici-dropdown a:last-child { border-bottom: none; }
+        .kullanici-dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        .usta-hero h1 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--gold);
-            font-size: 4rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
+        /* ─── HERO BÖLÜMÜ ─── */
+        .usta-hero { position: relative; background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('calismapng.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 90px 20px; text-align: center; color: var(--white); border-bottom: 4px solid var(--gold); }
+        .usta-hero h1 { font-family: 'Oswald', sans-serif; color: var(--gold); font-size: 4rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .usta-hero p { font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #ececec; max-width: 700px; margin: 0 auto; line-height: 1.6; }
 
-        .usta-hero p {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.2rem;
-            color: #ececec;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+        /* ─── AKORDEON (Soru-Cevap) BÖLÜMÜ ─── */
+        .sss-konteyner { max-width: 850px; margin: 60px auto 80px; padding: 0 20px; flex: 1; }
+        .sss-baslik { text-align: center; font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--dark); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+        .akordeon-oge { background: #fff; margin-bottom: 16px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; border-left: 4px solid transparent; transition: border-color 0.3s; }
+        .akordeon-oge.aktif { border-left-color: var(--gold); }
+        .akordeon-buton { width: 100%; text-align: left; padding: 22px 25px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s, color 0.3s; letter-spacing: 1px; }
+        .akordeon-buton:hover { background: rgba(0,0,0,0.02); }
+        .akordeon-buton.aktif { background: var(--dark); color: var(--gold); }
+        .arti-ikon { font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
+        .akordeon-buton.aktif .arti-ikon { transform: rotate(45deg); }
+        .akordeon-icerik { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; background: #fff; }
+        .akordeon-icerik p { padding: 5px 25px 25px; font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: #444; line-height: 1.7; }
+        .akordeon-icerik strong { color: var(--dark); }
 
-        /* ─── YENİ: AKORDEON (Soru-Cevap) BÖLÜMÜ ─── */
-        .sss-konteyner {
-            max-width: 850px;
-            margin: 60px auto 80px;
-            padding: 0 20px;
-        }
-
-        .sss-baslik {
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2rem;
-            color: var(--dark);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-        }
-
-        .akordeon-oge {
-            background: #fff;
-            margin-bottom: 16px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            overflow: hidden;
-            border-left: 4px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .akordeon-oge.aktif {
-            border-left-color: var(--gold);
-        }
-
-        .akordeon-buton {
-            width: 100%;
-            text-align: left;
-            padding: 22px 25px;
-            background: none;
-            border: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--dark);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s, color 0.3s;
-            letter-spacing: 1px;
-        }
-
-        .akordeon-buton:hover {
-            background: rgba(0,0,0,0.02);
-        }
-
-        .akordeon-buton.aktif {
-            background: var(--dark);
-            color: var(--gold);
-        }
-
-        .arti-ikon {
-            font-size: 1.5rem;
-            font-weight: 300;
-            transition: transform 0.3s ease;
-        }
-
-        .akordeon-buton.aktif .arti-ikon {
-            transform: rotate(45deg);
-        }
-
-        .akordeon-icerik {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease-out;
-            background: #fff;
-        }
-
-        .akordeon-icerik p {
-            padding: 5px 25px 25px;
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.05rem;
-            color: #444;
-            line-height: 1.7;
-        }
-
-        .akordeon-icerik strong {
-            color: var(--dark);
-        }
-
-        /* ─── GİRİŞ MODALİ (Sadece giriş için bırakıldı) ─── */
+        /* ─── MODAL VE FOOTER ─── */
         .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(20,20,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
         .modal-overlay.aktif { display: flex; }
         .modal-kutu { background: #222222; border: 2px solid var(--gold); border-radius: 14px; padding: 36px 34px 32px; width: 380px; max-width: 90vw; position: relative; animation: modalAc 0.25s ease; }
@@ -176,7 +79,6 @@
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
         .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
 
-        /* ─── FOOTER ─── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; margin-top: auto; }
         .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .footer-inner > p { font-family: 'Nunito', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
@@ -184,7 +86,7 @@
         .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; transition: color 0.2s; }
         .footer-linkler a:hover { color: var(--gold); }
 
-        /* ─── MOBİL MENÜ ─── */
+        /* MOBİL MENÜ */
         .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 26px; height: 19px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
         .hamburger span { display: block; width: 100%; height: 2.5px; background-color: #000; border-radius: 2px; transition: all 0.28s ease; }
         .hamburger.acik span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
@@ -220,7 +122,7 @@
 </head>
 <body>
 
-    <!-- ── NAVBAR (Linkler index.html'e yönlendirildi) ─── -->
+    <!-- ── NAVBAR ─── -->
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="index.html" class="navbar-brand">
@@ -236,12 +138,31 @@
                         <a href="#">Yazılım & Teknoloji</a>
                         <a href="#">Tasarım & Çeviri</a>
                         <a href="#">Ev & Tadilat</a>
-                        <a href="#">Tüm Kategoriler →</a>
                     </div>
                 </li>
+                <li>
+                    <a href="#">Kurumsal <span class="arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="#">Hakkımızda</a>
+                        <a href="#">Nasıl Çalışır?</a>
+                        <a href="#">S.S.S.</a>
+                    </div>
+                </li>
+                <li><a href="#" onclick="modalAc(); return false;">İletişim</a></li>
             </ul>
             <div class="navbar-giris">
-                <button class="giris-btn" onclick="girisAc()">Giriş Yap</button>
+                <!-- GİRİŞ YAPILMADIĞINDA GÖRÜNEN BUTON -->
+                <button class="giris-btn" id="btn-giris-yap" onclick="girisAc()">Giriş Yap</button>
+                
+                <!-- GİRİŞ YAPILDIĞINDA GÖRÜNECEK PROFİL MENÜSÜ -->
+                <div class="kullanici-menusu" id="menu-kullanici">
+                    <button class="kullanici-btn">Profilim <span class="arrow">▼</span></button>
+                    <div class="kullanici-dropdown">
+                        <a href="profil.html">Profile Git</a>
+                        <a href="#">Ayarlar</a>
+                        <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
+                    </div>
+                </div>
             </div>
             <button class="hamburger" id="hamburger" onclick="menuToggle()">
                 <span></span><span></span><span></span>
@@ -252,6 +173,19 @@
     <!-- ── MOBİL MENÜ ─── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="index.html">Ana Sayfa</a>
+        
+        <!-- MOBİL: GİRİŞ YAPILDIĞINDA GÖRÜNECEK KISIM -->
+        <div class="mobil-kategori" id="mobil-menu-kullanici" style="display: none;">
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
+                Profilim <span class="mobil-arrow">▼</span>
+            </button>
+            <div class="mobil-alt-menu">
+                <a href="profil.html">Profile Git</a>
+                <a href="#">Ayarlar</a>
+                <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
+            </div>
+        </div>
+
         <div class="mobil-kategori">
             <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
                 Kategoriler <span class="mobil-arrow">▼</span>
@@ -263,7 +197,9 @@
                 <a href="#">Ev & Tadilat</a>
             </div>
         </div>
-        <button class="giris-btn-mobil" onclick="girisAc(); menuToggle()">Giriş Yap</button>
+        <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
+        
+        <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
@@ -278,76 +214,80 @@
         <h2 class="sss-baslik">Aklına Takılanlar</h2>
 
         <div class="akordeon-oge">
-            <button class="akordeon-buton">
-                Belgem veya resmi bir ustalığım yok, yine de usta hesabı açabilir miyim?
-                <span class="arti-ikon">+</span>
-            </button>
+            <button class="akordeon-buton">Belgem veya resmi bir ustalığım yok, yine de usta hesabı açabilir miyim? <span class="arti-ikon">+</span></button>
             <div class="akordeon-icerik">
                 <p><strong>Aramıza hoş geldin!</strong> Tabii ki, Sorustaya'da usta olman için resmi bir ustalık belgesine ihtiyacın yok.<br><br>
                 Ancak kullanıcıların seni tercih etmesi için profiline; okuduğun bölümü, yetkinliklerini ve varsa sertifikalarını eklemeni öneriyoruz. Bunlar, insanların seni daha iyi tanımasını sağlar. Sisteme kayıt olurken tek seferlik küçük bir hizmet bedeli ödeyerek usta profiline sahip olabilir, hizmetlerinin fiyatını tamamen kendin belirleyebilirsin. İşin patronu sensin!<br><br>
-                <strong>Unutma:</strong> Müşterilerin sorularına verdiğin yanıtların kalitesi profilini doğrudan etkiler. Yanlış, özensiz veya laubali cevaplar puanını düşürerek profilinin alt sıralara gerilemesine sebep olabilir. Bu yüzden sadece uzman olduğun konularda hizmet vermen ve müşterilere düzgün yanıtlar sunman en büyük temennimizdir.</p>
+                <strong>Unutma:</strong> Müşterilerin sorularına verdiğin yanıtların kalitesi profilini doğrudan etkiler. Yanlış, özensiz veya laubali cevaplar puanını düşürerek profilinin alt sıralara gerilemesine sebep olabilir.</p>
             </div>
         </div>
 
         <div class="akordeon-oge">
-            <button class="akordeon-buton">
-                Hizmet fiyatlarımı nasıl belirleyeceğim?
-                <span class="arti-ikon">+</span>
-            </button>
+            <button class="akordeon-buton">Hizmet fiyatlarımı nasıl belirleyeceğim? <span class="arti-ikon">+</span></button>
             <div class="akordeon-icerik">
                 <p>Evet, en önemli konulardan birisi bu! Platformumuzda hizmet fiyatını tamamen sen belirlersin. Örneğin, standart bir tamirat işinin piyasada genel bir ortalaması vardır; ancak uzmanlığına ve sunduğun kaliteye güveniyorsan fiyatını buna göre yukarı çekmekte özgürsün.<br><br>
-                Sistemimiz, emeğini korumak adına her iş kategorisi için adil bir "minimum taban fiyat" belirler. Sana küçük bir tavsiyemiz var: Eğer platformda yeniysen ve henüz ilk işlerini alıyorsan, fiyatlarını uçuk tutmak yerine piyasa ortalamasında belirlemek; müşterilerin seni tanıması ve ilk olumlu yorumlarını toplaman için harika bir başlangıç stratejisi olacaktır.</p>
+                Sistemimiz, emeğini korumak adına her iş kategorisi için adil bir "minimum taban fiyat" belirler. Sana küçük bir tavsiyemiz var: Eğer platformda yeniysen ve henüz ilk işlerini alıyorsan, fiyatlarını uçuk tutmak yerine piyasa ortalamasında belirlemek çok iyi bir başlangıç olur.</p>
             </div>
         </div>
 
         <div class="akordeon-oge">
-            <button class="akordeon-buton">
-                Profilimi nasıl öne çıkarabilirim?
-                <span class="arti-ikon">+</span>
-            </button>
+            <button class="akordeon-buton">Profilimi nasıl öne çıkarabilirim? <span class="arti-ikon">+</span></button>
             <div class="akordeon-icerik">
                 <p>Buradaki en büyük sır, profilinin doluluğu ve şeffaflığıdır. İnsanlar kimden hizmet aldıklarını bilmek ister. Profiline gerçek bir fotoğrafını, yaşını, eğitim durumunu, sertifikalarını ve geçmiş tecrübelerini eklemek sana büyük bir avantaj sağlar.<br><br>
-                Seni yansıtan samimi veya tam profesyonel bir biyografi yazabilir; yeteneklerini, iş yapış tarzını ve insanlara nasıl yardımcı olduğunu anlatabilirsin. Varsa daha önce yaptığın işlerden oluşan bir portfolyo eklemek güveni katlar.<br><br>
-                <strong>Yıldız Sistemi:</strong> Tamamladığın her iş sana bir müşteri yorumu, her yorum da yıldız (1-5 arası) olarak geri döner. Yıldız ortalaman ne kadar yüksekse, aramalarda o kadar üstte ve güvenilir çıkarsın. Tam tersi, işi eksik yapmak veya müşteriye fayda sağlamamak sana düşük yıldız olarak döner ve profilini aşağı çeker. Vitrinin ne kadar sağlamsa, o kadar çok iş alırsın!</p>
+                Seni yansıtan samimi veya tam profesyonel bir biyografi yazabilir; yeteneklerini, iş yapış tarzını ve insanlara nasıl yardımcı olduğunu anlatabilirsin.<br><br>
+                <strong>Yıldız Sistemi:</strong> Tamamladığın her iş sana bir müşteri yorumu, her yorum da yıldız olarak geri döner. Yıldız ortalaman ne kadar yüksekse, aramalarda o kadar üstte ve güvenilir çıkarsın.</p>
             </div>
         </div>
 
         <div class="akordeon-oge">
-            <button class="akordeon-buton">
-                Hangi alanlarda ilan açabilirim?
-                <span class="arti-ikon">+</span>
-            </button>
+            <button class="akordeon-buton">Hangi alanlarda ilan açabilirim? <span class="arti-ikon">+</span></button>
             <div class="akordeon-icerik">
                 <p>Aslına bakarsan aklına gelebilecek her alanda! Seni belirli kategorilerle sınırlamak bu platformun özgür ruhuna aykırı olur. Sadece altını doldurabileceğin, müşteriye gerçekten değer katacağın ve "Ben bu işi çözerim" dediğin bir uzmanlık alanın olması yeterli.<br><br>
-                Günümüzde insanlar yapay zeka gibi araçları çok sık kullansa da, birebir insan iletişiminin ve bir problemi sonuna kadar takip edip çözmenin yerini hiçbir şey tutamaz. Bizim burada sunduğumuz şey tam olarak bu: Özgür bir platformda, gerçek bir insan dokunuşuyla çözüm sunmak. Ne iş yaparsan yap, yeter ki o işin ustası ol ve müşterinin sorununu çözmeden bırakma. İlanını istediğin şekilde açmakta tamamen özgürsün!</p>
+                Ne iş yaparsan yap, yeter ki o işin ustası ol ve müşterinin sorununu çözmeden bırakma. İlanını istediğin şekilde açmakta tamamen özgürsün!</p>
             </div>
         </div>
     </div>
 
-    <!-- ── GİRİŞ MODALİ ─── -->
+    <!-- ── İLETİŞİM MODAL ──────────── -->
+    <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
+        <div class="modal-kutu">
+            <button class="modal-kapat" onclick="modalKapat()">✕</button>
+            <div class="modal-baslik">İletişim</div>
+            <div class="modal-satir">
+                <p>Sorularınız için bizimle iletişime geçebilirsiniz.</p>
+                <div class="modal-sosyal-row">
+                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo" onerror="this.style.display='none'">
+                    <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── GİRİŞ MODALİ ──────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
             <div class="modal-baslik">Giriş Yap</div>
             <div class="form-grup">
                 <label for="giris-mail">E-Posta</label>
-                <input type="email" id="giris-mail" class="form-input" placeholder="ornek@mail.com">
+                <input type="text" id="giris-mail" class="form-input" placeholder="E-postanızı girin">
             </div>
             <div class="form-grup">
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-            <button class="giris-submit">Giriş Yap</button>
+            <div id="giris-hata" style="color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold;">Hatalı E-Posta veya Şifre!</div>
+            <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
             <div class="kayit-link">
                 Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
             </div>
         </div>
     </div>
 
-    <!-- ── FOOTER ─── -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-linkler">
+                <a href="#" onclick="modalAc(); return false;">İletişim</a>
                 <a href="#">Gizlilik Politikası</a>
                 <a href="#">Kullanım Şartları</a>
             </div>
@@ -356,8 +296,15 @@
     </footer>
 
     <script>
-        // Giriş Modali ve Menü Fonksiyonları
-        function girisAc()      { document.getElementById('giris-modal').classList.add('aktif'); }
+        function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
+        function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
+        function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
+        function girisAc()      { 
+            document.getElementById('giris-modal').classList.add('aktif'); 
+            document.getElementById('giris-hata').style.display = 'none';
+            document.getElementById('giris-mail').value = '';
+            document.getElementById('giris-sifre').value = '';
+        }
         function girisKapat()   { document.getElementById('giris-modal').classList.remove('aktif'); }
         function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
         function menuToggle() {
@@ -371,34 +318,61 @@
             btn.nextElementSibling.classList.toggle('acik');
         }
 
-        // Akordeon (SSS) Mantığı
+        /* ─── TARAYICI HAFIZASI VE GİRİŞ SİSTEMİ ─── */
+        document.addEventListener("DOMContentLoaded", function() {
+            girisDurumunuKontrolEt();
+        });
+
+        function sistemeGirisYap() {
+            var mail = document.getElementById('giris-mail').value;
+            var sifre = document.getElementById('giris-sifre').value;
+
+            if (mail === 'admin' && sifre === 'admin') {
+                localStorage.setItem('sorustaya_giris', 'admin');
+                girisKapat();
+                girisDurumunuKontrolEt();
+            } else {
+                document.getElementById('giris-hata').style.display = 'block';
+            }
+        }
+
+        function cikisYap() {
+            localStorage.removeItem('sorustaya_giris');
+            girisDurumunuKontrolEt();
+            if(document.body.classList.contains('menu-acik')) { menuToggle(); }
+        }
+
+        function girisDurumunuKontrolEt() {
+            var girisYapan = localStorage.getItem('sorustaya_giris');
+            if (girisYapan === 'admin') {
+                document.getElementById('btn-giris-yap').style.display = 'none';
+                document.getElementById('menu-kullanici').style.display = 'block';
+                document.getElementById('mobil-btn-giris').style.display = 'none';
+                document.getElementById('mobil-menu-kullanici').style.display = 'block';
+            } else {
+                document.getElementById('btn-giris-yap').style.display = 'block';
+                document.getElementById('menu-kullanici').style.display = 'none';
+                document.getElementById('mobil-btn-giris').style.display = 'block';
+                document.getElementById('mobil-menu-kullanici').style.display = 'none';
+            }
+        }
+
+        /* Akordeon Mantığı */
         const akordeonButonlari = document.querySelectorAll('.akordeon-buton');
-        
-        akordeonButonlari.forEach(buton => {
-            buton.addEventListener('click', function() {
-                // Diğer açık olanları kapatmak istersen bu bloğu aktif edebilirsin:
-                /*
-                akordeonButonlari.forEach(digerButon => {
-                    if (digerButon !== this && digerButon.classList.contains('aktif')) {
-                        digerButon.classList.remove('aktif');
-                        digerButon.parentElement.classList.remove('aktif');
-                        digerButon.nextElementSibling.style.maxHeight = null;
+        if(akordeonButonlari.length > 0) {
+            akordeonButonlari.forEach(buton => {
+                buton.addEventListener('click', function() {
+                    this.classList.toggle('aktif');
+                    this.parentElement.classList.toggle('aktif');
+                    const icerik = this.nextElementSibling;
+                    if (icerik.style.maxHeight) {
+                        icerik.style.maxHeight = null;
+                    } else {
+                        icerik.style.maxHeight = icerik.scrollHeight + "px";
                     }
                 });
-                */
-
-                this.classList.toggle('aktif');
-                this.parentElement.classList.toggle('aktif');
-                const icerik = this.nextElementSibling;
-                
-                if (icerik.style.maxHeight) {
-                    icerik.style.maxHeight = null;
-                } else {
-                    icerik.style.maxHeight = icerik.scrollHeight + "px";
-                }
             });
-        });
+        }
     </script>
-
 </body>
 </html>

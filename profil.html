@@ -25,223 +25,69 @@
         .navbar-menu > li > a:hover { background-color: rgba(0,0,0,0.1); }
         .arrow { font-size: 0.6rem; transition: transform 0.2s; }
         .navbar-menu > li:hover .arrow { transform: rotate(180deg); }
+        .dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0; background-color: #1c1c1c; min-width: 190px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; }
+        .navbar-menu > li:hover .dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
+        .dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
+        .dropdown a:last-child { border-bottom: none; }
+        .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── PROFİL ÜST BÖLÜM (Kapak ve Profil Foto) ─── */
-        .profil-kapak {
-            height: 250px;
-            background: linear-gradient(135deg, #111 0%, #333 100%);
-            position: relative;
-            border-bottom: 3px solid var(--gold);
-        }
-        
-        .profil-kapak-icerik {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            height: 100%;
-        }
+        /* KULLANICI MENÜSÜ */
+        .kullanici-menusu { position: relative; display: none; }
+        .kullanici-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
+        .kullanici-btn:hover { background-color: #1a1a1a; color: #fff; }
+        .kullanici-dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; right: 0; background-color: #1c1c1c; min-width: 160px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; margin-top: 5px; border-radius: 0 0 6px 6px; }
+        .kullanici-menusu:hover .kullanici-dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
+        .kullanici-dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
+        .kullanici-dropdown a:last-child { border-bottom: none; }
+        .kullanici-dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        .profil-avatar {
-            width: 160px;
-            height: 160px;
-            background-color: var(--gold);
-            border: 6px solid #ececec;
-            border-radius: 50%;
-            position: absolute;
-            bottom: -80px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: bold;
-            color: #1a1a1a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            font-family: 'Oswald', sans-serif;
-        }
+        /* ─── PROFİL ÜST BÖLÜM ─── */
+        .profil-kapak { height: 250px; background: linear-gradient(135deg, #111 0%, #333 100%); position: relative; border-bottom: 3px solid var(--gold); }
+        .profil-kapak-icerik { max-width: 1100px; margin: 0 auto; position: relative; height: 100%; }
+        .profil-avatar { width: 160px; height: 160px; background-color: var(--gold); border: 6px solid #ececec; border-radius: 50%; position: absolute; bottom: -80px; left: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; font-weight: bold; color: #1a1a1a; box-shadow: 0 8px 20px rgba(0,0,0,0.15); font-family: 'Oswald', sans-serif; }
 
         /* ─── PROFİL İÇERİK DÜZENİ ─── */
-        .profil-ana-icerik {
-            max-width: 1100px;
-            margin: 100px auto 60px; /* Avatar taşması için üst boşluk */
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 2fr; /* Sol (bilgi) - Sağ (ilanlar) */
-            gap: 40px;
-        }
-
-        /* Sol Kolon - Bilgiler */
-        .profil-bilgi {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
-            height: fit-content;
-        }
-
-        .profil-isim {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .profil-kullanici-adi {
-            color: #666;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .profil-yildiz {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
+        .profil-ana-icerik { max-width: 1100px; margin: 100px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; flex: 1; }
+        .profil-bilgi { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.06); height: fit-content; }
+        .profil-isim { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--dark); margin-bottom: 5px; letter-spacing: 1px; text-transform: uppercase; }
+        .profil-kullanici-adi { color: #666; font-size: 1rem; font-weight: 600; margin-bottom: 15px; }
+        .profil-yildiz { color: var(--gold); font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 5px; }
         .profil-yildiz span { color: #1a1a1a; font-size: 0.95rem; font-weight: bold; margin-left: 5px; }
+        .profil-buton { display: block; width: 100%; text-align: center; background: var(--dark); color: var(--gold); padding: 12px; border-radius: 8px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-decoration: none; letter-spacing: 1px; transition: all 0.2s; margin-bottom: 25px; border: 2px solid var(--dark); }
+        .profil-buton:hover { background: #fff; color: var(--dark); }
+        .etiket-kutusu { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+        .etiket { background: rgba(255, 215, 0, 0.2); color: #111; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
+        .profil-baslik { font-family: 'Oswald', sans-serif; font-size: 1.3rem; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 15px; color: var(--dark); letter-spacing: 1px; text-transform: uppercase; }
+        .profil-metin { font-size: 0.95rem; line-height: 1.7; color: #555; margin-bottom: 25px; }
 
-        .profil-buton {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background: var(--dark);
-            color: var(--gold);
-            padding: 12px;
-            border-radius: 8px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: all 0.2s;
-            margin-bottom: 25px;
-            border: 2px solid var(--dark);
-        }
+        .ilan-listesi { display: flex; flex-direction: column; gap: 20px; }
+        .ilan-kart { background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); display: flex; overflow: hidden; border: 1px solid #eee; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .ilan-kart:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .ilan-renk { width: 12px; background: var(--gold); flex-shrink: 0; }
+        .ilan-icerik { padding: 25px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .ilan-baslik { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--dark); margin-bottom: 10px; }
+        .ilan-aciklama { font-size: 0.95rem; color: #666; line-height: 1.6; margin-bottom: 20px; }
+        .ilan-alt { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
+        .ilan-fiyat { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--dark); font-weight: 700; }
+        .ilan-siparis-btn { background: var(--gold); color: #000; padding: 8px 20px; border-radius: 6px; font-weight: bold; text-transform: uppercase; font-family: 'Oswald', sans-serif; font-size: 0.9rem; text-decoration: none; }
 
-        .profil-buton:hover {
-            background: #fff;
-            color: var(--dark);
-        }
+        /* ─── MODALLAR VE FOOTER ─── */
+        .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(20,20,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
+        .modal-overlay.aktif { display: flex; }
+        .modal-kutu { background: #222222; border: 2px solid var(--gold); border-radius: 14px; padding: 36px 34px 32px; width: 380px; max-width: 90vw; position: relative; animation: modalAc 0.25s ease; }
+        @keyframes modalAc { from { opacity: 0; transform: scale(0.92) translateY(-12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-kapat { position: absolute; top: 14px; right: 16px; background: var(--gold); color: #000; border: none; width: 28px; height: 28px; border-radius: 6px; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.2s; }
+        .modal-kapat:hover { background: #fff; }
+        .modal-baslik { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 22px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 14px; }
+        .form-grup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+        .form-grup label { font-family: 'Oswald', sans-serif; font-size: 0.82rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); }
+        .form-input { width: 100%; background: #2c2c2c; border: 1px solid rgba(255,215,0,0.25); border-radius: 7px; padding: 10px 14px; color: #fff; font-family: 'Nunito', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+        .form-input:focus { border-color: var(--gold); }
+        .giris-submit { width: 100%; margin-top: 6px; padding: 12px; background-color: var(--gold); color: #000; border: none; border-radius: 7px; font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+        .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
+        .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
+        .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
 
-        .etiket-kutusu {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        .etiket {
-            background: rgba(255, 215, 0, 0.2);
-            color: #111;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        .profil-baslik {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            color: var(--dark);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .profil-metin {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 25px;
-        }
-
-        /* Sağ Kolon - İlanlar */
-        .ilan-listesi {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .ilan-kart {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-            display: flex;
-            overflow: hidden;
-            border: 1px solid #eee;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .ilan-kart:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-color: var(--gold);
-        }
-
-        .ilan-renk {
-            width: 12px;
-            background: var(--gold);
-            flex-shrink: 0;
-        }
-
-        .ilan-icerik {
-            padding: 25px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .ilan-baslik {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .ilan-aciklama {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .ilan-alt {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        .ilan-fiyat {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .ilan-siparis-btn {
-            background: var(--gold);
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            text-decoration: none;
-        }
-
-        /* ─── FOOTER & MOBİL (Aynı) ─── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; margin-top: auto; }
         .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .footer-inner > p { font-family: 'Nunito', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
@@ -261,12 +107,19 @@
         body.menu-acik { overflow: hidden; }
         .mobil-menu > a { display: block; padding: 13px 22px; color: #000; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); transition: background 0.15s; }
         .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
+        .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; transition: background 0.15s; }
+        .mobil-arrow { font-size: 0.65rem; transition: transform 0.25s; flex-shrink: 0; }
+        .mobil-kategori-btn.acik .mobil-arrow { transform: rotate(180deg); }
+        .mobil-alt-menu { display: none; background: rgba(0,0,0,0.06); }
+        .mobil-alt-menu.acik { display: block; }
+        .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; }
 
         @media (max-width: 768px) {
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
-            
             .profil-ana-icerik { grid-template-columns: 1fr; margin-top: 110px; }
             .profil-avatar { left: 50%; transform: translateX(-50%); }
             .profil-bilgi { text-align: center; }
@@ -283,13 +136,77 @@
                 <img src="logo3.png" alt="Sorustaya Logo" class="navbar-logo">
                 Sorustaya
             </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li>
+                    <a href="#">Kategoriler <span class="arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="#">Eğitim & Ders</a>
+                        <a href="#">Yazılım & Teknoloji</a>
+                        <a href="#">Tasarım & Çeviri</a>
+                        <a href="#">Ev & Tadilat</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Kurumsal <span class="arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="#">Hakkımızda</a>
+                        <a href="#">Nasıl Çalışır?</a>
+                        <a href="#">S.S.S.</a>
+                    </div>
+                </li>
+                <li><a href="#" onclick="modalAc(); return false;">İletişim</a></li>
+            </ul>
+            <div class="navbar-giris">
+                <!-- GİRİŞ YAPILMADIĞINDA GÖRÜNEN BUTON -->
+                <button class="giris-btn" id="btn-giris-yap" onclick="girisAc()">Giriş Yap</button>
+                
+                <!-- GİRİŞ YAPILDIĞINDA GÖRÜNECEK PROFİL MENÜSÜ -->
+                <div class="kullanici-menusu" id="menu-kullanici">
+                    <button class="kullanici-btn">Profilim <span class="arrow">▼</span></button>
+                    <div class="kullanici-dropdown">
+                        <a href="profil.html">Profile Git</a>
+                        <a href="#">Ayarlar</a>
+                        <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
             <button class="hamburger" id="hamburger" onclick="menuToggle()">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
+
+    <!-- ── MOBİL MENÜ ─── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="index.html">Ana Sayfa</a>
+        
+        <!-- MOBİL: GİRİŞ YAPILDIĞINDA GÖRÜNECEK KISIM -->
+        <div class="mobil-kategori" id="mobil-menu-kullanici" style="display: none;">
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
+                Profilim <span class="mobil-arrow">▼</span>
+            </button>
+            <div class="mobil-alt-menu">
+                <a href="profil.html">Profile Git</a>
+                <a href="#">Ayarlar</a>
+                <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
+            </div>
+        </div>
+
+        <div class="mobil-kategori">
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
+                Kategoriler <span class="mobil-arrow">▼</span>
+            </button>
+            <div class="mobil-alt-menu">
+                <a href="#">Eğitim & Ders</a>
+                <a href="#">Yazılım & Teknoloji</a>
+                <a href="#">Tasarım & Çeviri</a>
+                <a href="#">Ev & Tadilat</a>
+            </div>
+        </div>
+        <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
+        
+        <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
@@ -302,31 +219,22 @@
 
     <!-- ── PROFİL İÇERİK ─── -->
     <div class="profil-ana-icerik">
-        
-        <!-- Sol Kolon: Biyografi & Bilgiler -->
         <div class="profil-bilgi">
             <h1 class="profil-isim">Lim10ur</h1>
             <p class="profil-kullanici-adi">@lim10ur</p>
-            
-            <div class="profil-yildiz">
-                ⭐⭐⭐⭐⭐ <span>5.0 (24 Yorum)</span>
-            </div>
-
+            <div class="profil-yildiz">⭐⭐⭐⭐⭐ <span>5.0 (24 Yorum)</span></div>
             <a href="#" class="profil-buton">Mesaj Gönder</a>
-
             <div class="etiket-kutusu">
                 <span class="etiket">#3DBaskı</span>
                 <span class="etiket">#YapayZeka</span>
                 <span class="etiket">#LoFiMüzik</span>
                 <span class="etiket">#VideoKurgu</span>
             </div>
-
             <h3 class="profil-baslik">Hakkımda</h3>
             <p class="profil-metin">
                 Selam! Yaratıcı üretim ve teknolojik problem çözme konusunda uzmanım. Özellikle Bambu Lab A1 ile 3D modelleme ve baskı hatalarını (Z ekseni ayarları, köşe pürüzleri vb.) giderme konusunda yetkinim. <br><br>
                 Ayrıca Suno Premium ve gelişmiş yapay zeka araçlarını kullanarak uzun metrajlı (2 saatlik) YouTube Lo-Fi müzik videoları kurguluyor, prompt bazlı kreatif üretimler yapıyorum. İhtiyacınız olan çözümü sıfırdan tasarlamak için buradayım!
             </p>
-
             <h3 class="profil-baslik">Ekipmanlar & Yetkinlikler</h3>
             <ul class="profil-metin" style="list-style-position: inside;">
                 <li>Bambu Lab A1 3D Printer</li>
@@ -335,10 +243,7 @@
             </ul>
         </div>
 
-        <!-- Sağ Kolon: İlanlar (Gig'ler) -->
         <div class="ilan-listesi">
-            
-            <!-- İlan 1 -->
             <div class="ilan-kart">
                 <div class="ilan-renk"></div>
                 <div class="ilan-icerik">
@@ -352,8 +257,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- İlan 2 -->
             <div class="ilan-kart">
                 <div class="ilan-renk"></div>
                 <div class="ilan-icerik">
@@ -367,8 +270,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- İlan 3 -->
             <div class="ilan-kart">
                 <div class="ilan-renk"></div>
                 <div class="ilan-icerik">
@@ -382,14 +283,49 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- ── FOOTER ─── -->
+    <!-- ── İLETİŞİM MODAL ──────────── -->
+    <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
+        <div class="modal-kutu">
+            <button class="modal-kapat" onclick="modalKapat()">✕</button>
+            <div class="modal-baslik">İletişim</div>
+            <div class="modal-satir">
+                <p>Sorularınız için bizimle iletişime geçebilirsiniz.</p>
+                <div class="modal-sosyal-row">
+                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo" onerror="this.style.display='none'">
+                    <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── GİRİŞ MODALİ ──────────── -->
+    <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
+        <div class="modal-kutu">
+            <button class="modal-kapat" onclick="girisKapat()">✕</button>
+            <div class="modal-baslik">Giriş Yap</div>
+            <div class="form-grup">
+                <label for="giris-mail">E-Posta</label>
+                <input type="text" id="giris-mail" class="form-input" placeholder="E-postanızı girin">
+            </div>
+            <div class="form-grup">
+                <label for="giris-sifre">Şifre</label>
+                <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
+            </div>
+            <div id="giris-hata" style="color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold;">Hatalı E-Posta veya Şifre!</div>
+            <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
+            <div class="kayit-link">
+                Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-linkler">
+                <a href="#" onclick="modalAc(); return false;">İletişim</a>
                 <a href="#">Gizlilik Politikası</a>
                 <a href="#">Kullanım Şartları</a>
             </div>
@@ -398,11 +334,65 @@
     </footer>
 
     <script>
+        function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
+        function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
+        function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
+        function girisAc()      { 
+            document.getElementById('giris-modal').classList.add('aktif'); 
+            document.getElementById('giris-hata').style.display = 'none';
+            document.getElementById('giris-mail').value = '';
+            document.getElementById('giris-sifre').value = '';
+        }
+        function girisKapat()   { document.getElementById('giris-modal').classList.remove('aktif'); }
+        function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
         function menuToggle() {
             document.getElementById('hamburger').classList.toggle('acik');
             document.getElementById('mobil-menu').classList.toggle('acik');
             document.getElementById('mobil-overlay').classList.toggle('acik');
             document.body.classList.toggle('menu-acik');
+        }
+        function kategoriToggle(btn) {
+            btn.classList.toggle('acik');
+            btn.nextElementSibling.classList.toggle('acik');
+        }
+
+        /* ─── TARAYICI HAFIZASI VE GİRİŞ SİSTEMİ ─── */
+        document.addEventListener("DOMContentLoaded", function() {
+            girisDurumunuKontrolEt();
+        });
+
+        function sistemeGirisYap() {
+            var mail = document.getElementById('giris-mail').value;
+            var sifre = document.getElementById('giris-sifre').value;
+
+            if (mail === 'admin' && sifre === 'admin') {
+                localStorage.setItem('sorustaya_giris', 'admin');
+                girisKapat();
+                girisDurumunuKontrolEt();
+            } else {
+                document.getElementById('giris-hata').style.display = 'block';
+            }
+        }
+
+        function cikisYap() {
+            localStorage.removeItem('sorustaya_giris');
+            girisDurumunuKontrolEt();
+            if(document.body.classList.contains('menu-acik')) { menuToggle(); }
+        }
+
+        function girisDurumunuKontrolEt() {
+            var girisYapan = localStorage.getItem('sorustaya_giris');
+            if (girisYapan === 'admin') {
+                document.getElementById('btn-giris-yap').style.display = 'none';
+                document.getElementById('menu-kullanici').style.display = 'block';
+                document.getElementById('mobil-btn-giris').style.display = 'none';
+                document.getElementById('mobil-menu-kullanici').style.display = 'block';
+            } else {
+                document.getElementById('btn-giris-yap').style.display = 'block';
+                document.getElementById('menu-kullanici').style.display = 'none';
+                document.getElementById('mobil-btn-giris').style.display = 'block';
+                document.getElementById('mobil-menu-kullanici').style.display = 'none';
+            }
         }
     </script>
 </body>
