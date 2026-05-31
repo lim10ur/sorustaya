@@ -60,7 +60,7 @@
         }
 
         .navbar-logo {
-            width: 30px;
+            width: 22px;
             height: auto;
         }
 
@@ -196,7 +196,7 @@
         /* ─── HAKKIMIZDA ─────────────────────────────── */
         .hakkimizda {
             background-image:
-                linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
                 url('logohakkimda.png');
             background-size: cover;
             background-position: center;
@@ -243,6 +243,99 @@
         .iletisim-butonu:hover {
             background-color: transparent;
             color: var(--gold);
+        }
+
+        /* ─── MODAl ──────────────────────────────────── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(20,20,20,0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.aktif {
+            display: flex;
+        }
+
+        .modal-kutu {
+            background: #222222;
+            border: 2px solid var(--gold);
+            border-radius: 14px;
+            padding: 36px 34px 32px;
+            width: 380px;
+            max-width: 90vw;
+            position: relative;
+            animation: modalAc 0.25s ease;
+        }
+
+        @keyframes modalAc {
+            from { opacity: 0; transform: scale(0.92) translateY(-12px); }
+            to   { opacity: 1; transform: scale(1)    translateY(0); }
+        }
+
+        .modal-kapat {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+
+        .modal-kapat:hover {
+            background: #fff;
+        }
+
+        .modal-baslik {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+            padding-bottom: 14px;
+        }
+
+        .modal-satir {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .modal-satir p {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1.6;
+        }
+
+        .modal-satir a {
+            color: var(--gold);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .modal-satir a:hover {
+            color: #fff;
         }
 
         /* ─── MOBİL ──────────────────────────────────── */
@@ -317,8 +410,26 @@
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>GELİYO GELİYO ÇOK TAŞŞAKLI Bİ ŞEY GELİYOR :D</p>
-        <a href="mailto:onurunal7744@gmail.com" class="iletisim-butonu">Bize Ulaşın</a>
+        <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
+
+    <!-- ── MODAL ─────────────────────────────────────── -->
+    <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
+        <div class="modal-kutu">
+            <button class="modal-kapat" onclick="modalKapat()">✕</button>
+            <div class="modal-baslik">Hakkımda</div>
+            <div class="modal-satir">
+                <p>Bu projeyi bitirmeliyim.</p>
+                <p>mail: <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function modalAc()    { document.getElementById('modal').classList.add('aktif'); }
+        function modalKapat() { document.getElementById('modal').classList.remove('aktif'); }
+        function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
+    </script>
 
 </body>
 </html>
