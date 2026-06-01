@@ -177,6 +177,53 @@
         .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; }
 
+        /* ─── BİZ KİMİZ SABİT BALON ─── */
+        .biz-kimiz-balon {
+            position: fixed; bottom: 28px; right: 28px; z-index: 900;
+            background: var(--gold); color: #000; border: none;
+            border-radius: 50px; padding: 12px 22px;
+            font-family: 'Oswald', sans-serif; font-size: 0.9rem;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+            display: flex; align-items: center; gap: 9px;
+            animation: balonNefes 2.4s ease-in-out infinite;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+        .biz-kimiz-balon:hover {
+            background: #1a1a1a; color: var(--gold);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+            animation-play-state: paused;
+        }
+        .balon-nokta {
+            width: 8px; height: 8px; background: #000;
+            border-radius: 50%; flex-shrink: 0;
+            animation: balonNokta 2.4s ease-in-out infinite;
+        }
+        .biz-kimiz-balon:hover .balon-nokta { background: var(--gold); animation-play-state: paused; }
+        @keyframes balonNefes {
+            0%, 100% { box-shadow: 0 6px 22px rgba(255,215,0,0.35), 0 0 0 0 rgba(255,215,0,0.4); }
+            50%       { box-shadow: 0 6px 22px rgba(255,215,0,0.6),  0 0 0 12px rgba(255,215,0,0); }
+        }
+        @keyframes balonNokta {
+            0%, 100% { transform: scale(1);   opacity: 1; }
+            50%       { transform: scale(1.6); opacity: 0.5; }
+        }
+        /* BİZ KİMİZ MODALİ */
+        #biz-kimiz-modal .modal-kutu { width: 520px; max-width: 94vw; }
+        #biz-kimiz-modal .modal-baslik { font-size: 1.85rem; letter-spacing: 4px; }
+        .bk-icerik { display: flex; flex-direction: column; gap: 13px; }
+        .bk-icerik > p { color: rgba(255,255,255,0.82); font-family: 'Nunito', sans-serif; font-size: 1rem; line-height: 1.75; }
+        .bk-satir {
+            display: flex; align-items: flex-start; gap: 13px;
+            background: rgba(255,255,255,0.04); border-radius: 9px;
+            padding: 13px 15px; border-left: 3px solid var(--gold);
+        }
+        .bk-ikon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+        .bk-metin strong { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; display: block; margin-bottom: 3px; }
+        .bk-metin span { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
+        .bk-footer { font-size: 0.85rem; color: rgba(255,255,255,0.38); text-align: center; border-top: 1px solid rgba(255,215,0,0.12); padding-top: 12px; margin-top: 2px; }
+
         @media (max-width: 768px) {
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
@@ -317,6 +364,52 @@
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
+    <!-- ── BİZ KİMİZ SABİT BALON ─── -->
+    <button class="biz-kimiz-balon" onclick="bizKimizAc()">
+        <span class="balon-nokta"></span>
+        Biz Kimiz?
+    </button>
+
+    <!-- ── BİZ KİMİZ MODALİ ─── -->
+    <div class="modal-overlay" id="biz-kimiz-modal" onclick="bizKimizDisari(event)">
+        <div class="modal-kutu">
+            <button class="modal-kapat" onclick="bizKimizKapat()">✕</button>
+            <div class="modal-baslik">BİZ KİMİZ?</div>
+            <div class="bk-icerik">
+                <p><strong style="color:var(--gold);font-family:'Oswald',sans-serif;letter-spacing:1px;">Sorustaya</strong>, "işini ustasına sor" felsefesiyle kurulmuş, tamamen özgür ve açık bir yetenek &amp; hizmet pazaryeridir. Burada her konuda uzman bulmak ya da kendi uzmanlığını satmak mümkün.</p>
+                <div class="bk-satir">
+                    <span class="bk-ikon">🧠</span>
+                    <div class="bk-metin">
+                        <strong>Her Konuda Soru Sor</strong>
+                        <span>İngilizce dersinden 3D baskıya, muhasebeden astrolojiye — aklına ne takılırsa uzmana danış. Hiçbir konu dışarıda değil.</span>
+                    </div>
+                </div>
+                <div class="bk-satir">
+                    <span class="bk-ikon">🚀</span>
+                    <div class="bk-metin">
+                        <strong>Herkes Usta Olabilir</strong>
+                        <span>Diploman yoksa sorun değil. 3D baskı yapıyorsan, müzik üretiyorsan, yazılım yazıyorsan — o bilgi para eder. Profilini aç, fiyatını sen belirle, işinin patronu ol.</span>
+                    </div>
+                </div>
+                <div class="bk-satir">
+                    <span class="bk-ikon">🛡️</span>
+                    <div class="bk-metin">
+                        <strong>Paran Güvende</strong>
+                        <span>Güvenli Havuz Sistemi ile ödemen iş bitene kadar ustaya geçmez. İş beğenmezsen para direkt hesabına iade edilir.</span>
+                    </div>
+                </div>
+                <div class="bk-satir">
+                    <span class="bk-ikon">⭐</span>
+                    <div class="bk-metin">
+                        <strong>Şeffaf Yıldız Sistemi</strong>
+                        <span>Her tamamlanan iş bir yorum, her yorum bir yıldız. Sahte profil barınamaz, gerçek kalite öne çıkar.</span>
+                    </div>
+                </div>
+                <p class="bk-footer">Sorustaya — İşi Ustasına Sor. 🔑</p>
+            </div>
+        </div>
+    </div>
+
     <!-- ── İLETİŞİM MODAL ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
@@ -368,6 +461,9 @@
         function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
         function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
         function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
+        function bizKimizAc()      { document.getElementById('biz-kimiz-modal').classList.add('aktif'); }
+        function bizKimizKapat()   { document.getElementById('biz-kimiz-modal').classList.remove('aktif'); }
+        function bizKimizDisari(e) { if (e.target === document.getElementById('biz-kimiz-modal')) bizKimizKapat(); }
         function girisAc()      { 
             document.getElementById('giris-modal').classList.add('aktif'); 
             document.getElementById('giris-hata').style.display = 'none';
