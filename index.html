@@ -5,104 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorustaya | Yetenek ve Hizmet Pazaryeri</title>
     <meta name="description" content="İngilizce dersinden yazılıma, tesisattan tasarıma kadar aradığın her konuda yetenekli ustaları ve uzmanları bul. İşi ustasına sor!">
-    <meta property="og:title" content="Sorustaya | Yetenek ve Hizmet Pazaryeri">
-    <meta property="og:description" content="Aradığın her konuda yetenekli uzmanları ve ustaları tek bir yerde bul. Güvenilir profiller, hızlı hizmet.">
-    <meta property="og:image" content="https://sorustaya.com/logo3.png">
-    <meta property="og:url" content="https://sorustaya.com">
-    <meta property="og:type" content="website">
     <link rel="icon" href="logo3.png?v=2" type="image/png">
-    <link rel="shortcut icon" href="logo3.png?v=2" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #FFD700;
-            --gold-dark: #e6c200;
-            --dark: #1a1a1a;
-            --darker: #111111;
-            --white: #ffffff;
-        }
+        :root { --gold: #FFD700; --gold-dark: #e6c200; --dark: #1a1a1a; --darker: #111111; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: linear-gradient(160deg, #ffffff 0%, #ececec 100%); color: #1a1a1a; font-family: 'Nunito', sans-serif; min-height: 100vh; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(160deg, #ffffff 0%, #ececec 100%);
-            color: #1a1a1a;
-            font-family: 'Nunito', sans-serif;
-            min-height: 100vh;
-        }
-
-        /* ─── NAVBAR ─────────────────────────────────── */
+        /* ─── NAVBAR ─── */
         .navbar { background-color: var(--gold); width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 10px rgba(0,0,0,0.5); }
-        .navbar-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 30px; height: 46px; max-width: 1200px; margin: 0 auto; }
+        .navbar-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 30px; height: 46px; max-width: 1400px; margin: 0 auto; }
         .navbar-brand { display: flex; align-items: center; gap: 9px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; color: #000; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; justify-self: start; }
         .navbar-logo { width: 22px; height: auto; }
-        .navbar-menu { display: flex; list-style: none; height: 46px; justify-content: center; }
+        .navbar-menu { display: flex; list-style: none; height: 46px; justify-content: center; align-items: center; }
         .navbar-giris { justify-self: end; display: flex; align-items: center; }
-        
-        /* YENİ EKLENEN ÖRNEK PROFİL LİNKİ CSS'İ */
         .ornek-profil-link { margin-right: 20px; color: #111; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
         .ornek-profil-link:hover { border-color: #111; }
-
         .giris-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
         .giris-btn:hover { background-color: #1a1a1a; color: #fff; }
-        
         .navbar-menu > li { position: relative; height: 100%; }
         .navbar-menu > li > a { display: flex; align-items: center; height: 100%; padding: 0 16px; color: #000; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: background-color 0.2s; gap: 5px; }
         .navbar-menu > li > a:hover { background-color: rgba(0,0,0,0.1); }
         .arrow { font-size: 0.6rem; transition: transform 0.2s; }
         .navbar-menu > li:hover .arrow { transform: rotate(180deg); }
-        
-        .dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0; background-color: #1c1c1c; min-width: 190px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; }
+        .dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0; background-color: #1c1c1c; min-width: 190px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 1005; }
         .navbar-menu > li:hover .dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
         .dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
-        .dropdown a:last-child { border-bottom: none; }
         .dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── KULLANICI PROFİL MENÜSÜ ─── */
-        .kullanici-menusu { position: relative; display: none; }
+        .kullanici-menusu { position: relative; display: none; height: 46px; align-items: center; }
         .kullanici-btn { background-color: #000; color: var(--gold); border: none; padding: 7px 18px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
         .kullanici-btn:hover { background-color: #1a1a1a; color: #fff; }
-        .kullanici-dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; right: 0; background-color: #1c1c1c; min-width: 160px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; margin-top: 5px; border-radius: 0 0 6px 6px; }
+        .kullanici-dropdown { visibility: hidden; opacity: 0; position: absolute; top: 100%; right: 0; background-color: #1c1c1c; min-width: 160px; border-top: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,0.6); transform: translateY(-6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; border-radius: 0 0 6px 6px; z-index: 1005; }
         .kullanici-menusu:hover .kullanici-dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
         .kullanici-dropdown a { display: block; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background-color 0.15s, color 0.15s, padding-left 0.15s; }
-        .kullanici-dropdown a:last-child { border-bottom: none; }
         .kullanici-dropdown a:hover { background-color: var(--gold); color: #000; padding-left: 26px; }
 
-        /* ─── ANA İÇERİK DÜZENİ ───────────────── */
-        .ana-icerik {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-            gap: 45px;
+        /* ─── BİZ KİMİZ SABİT BALON (SOL ÜST) ─── */
+        .biz-kimiz-balon {
+            position: fixed; top: 75px; left: 30px; z-index: 900;
+            background: var(--gold); color: #000; border: none;
+            border-radius: 50px; padding: 12px 22px;
+            font-family: 'Oswald', sans-serif; font-size: 0.9rem;
+            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+            display: flex; align-items: center; gap: 9px;
+            animation: balonNefes 2.4s ease-in-out infinite;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         }
+        .biz-kimiz-balon:hover { background: #1a1a1a; color: var(--gold); transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 32px rgba(0,0,0,0.3); animation-play-state: paused; }
+        .balon-nokta { width: 8px; height: 8px; background: #000; border-radius: 50%; flex-shrink: 0; animation: balonNokta 2.4s ease-in-out infinite; }
+        .biz-kimiz-balon:hover .balon-nokta { background: var(--gold); animation-play-state: paused; }
+        @keyframes balonNefes { 0%, 100% { box-shadow: 0 6px 22px rgba(255,215,0,0.35), 0 0 0 0 rgba(255,215,0,0.4); } 50% { box-shadow: 0 6px 22px rgba(255,215,0,0.6),  0 0 0 12px rgba(255,215,0,0); } }
+        @keyframes balonNokta { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: 0.5; } }
 
+        /* BİZ KİMİZ MODALİ */
+        #biz-kimiz-modal .modal-kutu { width: 520px; max-width: 94vw; }
+        #biz-kimiz-modal .modal-baslik { font-size: 1.85rem; letter-spacing: 4px; }
+        .bk-icerik { display: flex; flex-direction: column; gap: 13px; }
+        .bk-icerik > p { color: rgba(255,255,255,0.82); font-family: 'Nunito', sans-serif; font-size: 1rem; line-height: 1.75; }
+        .bk-satir { display: flex; align-items: flex-start; gap: 13px; background: rgba(255,255,255,0.04); border-radius: 9px; padding: 13px 15px; border-left: 3px solid var(--gold); }
+        .bk-ikon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+        .bk-metin strong { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; display: block; margin-bottom: 3px; }
+        .bk-metin span { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
+        .bk-footer { font-size: 0.85rem; color: rgba(255,255,255,0.38); text-align: center; border-top: 1px solid rgba(255,215,0,0.12); padding-top: 12px; margin-top: 2px; }
+
+        /* ─── ANA İÇERİK DÜZENİ ─── */
+        .ana-icerik { display: flex; flex-direction: column; align-items: center; max-width: 1100px; margin: 60px auto; padding: 0 20px; gap: 45px; }
         .ust-arama { width: 100%; max-width: 850px; }
         .alt-kutular { display: flex; flex-direction: row; justify-content: center; gap: 30px; width: 100%; }
 
-        /* ─── ARAMA BÖLÜMÜ ───────────────────────────── */
+        /* ─── ARAMA BÖLÜMÜ ─── */
         .arama-kutusu { display: flex; background: #fff; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); overflow: hidden; border: 2px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
         .arama-kutusu:focus-within { border-color: var(--gold); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2); }
         .arama-input { flex: 1; border: none; padding: 22px 30px; font-size: 1.15rem; font-family: 'Nunito', sans-serif; outline: none; color: #1a1a1a; }
         .arama-input::placeholder { color: #999; font-weight: 400; }
         .arama-btn { background-color: var(--gold); color: #000; border: none; padding: 0 40px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
         .arama-btn:hover { background-color: #1a1a1a; color: var(--gold); }
-        
         .populer-aramalar { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; }
         .populer-baslik { font-size: 0.95rem; color: #666; font-weight: 600; margin-right: 5px; }
         .arama-etiketi { background: #1a1a1a; color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: transform 0.2s, background 0.2s; }
         .arama-etiketi:hover { background: #000; transform: translateY(-2px); }
 
-        /* ─── YÖNLENDİRME KUTULARI (CTA) ────────── */
-        .usta-ol-kutu {
-            display: block; flex: 1; background: #1a1a1a; border: 2px dashed var(--gold); border-radius: 20px; padding: 35px 25px; text-align: center; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; position: relative; overflow: hidden;
-        }
+        /* ─── YÖNLENDİRME KUTULARI (CTA) ─── */
+        .usta-ol-kutu { display: block; flex: 1; background: #1a1a1a; border: 2px dashed var(--gold); border-radius: 20px; padding: 35px 25px; text-align: center; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; position: relative; overflow: hidden; }
         .usta-ol-kutu:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); background: #111111; }
         .usta-ol-ikon { font-size: 3.5rem; margin-bottom: 15px; line-height: 1; }
         .usta-ol-kutu h3 { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 12px; }
@@ -110,7 +96,7 @@
         .usta-ol-ok { display: inline-block; background: var(--gold); color: #000; font-family: 'Oswald', sans-serif; padding: 10px 24px; border-radius: 30px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: background 0.2s; }
         .usta-ol-kutu:hover .usta-ol-ok { background: #fff; }
 
-        /* ─── HAKKIMIZDA ─────────────────────────────── */
+        /* ─── HAKKIMIZDA ─── */
         .hakkimizda { position: relative; background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('logohakkimda.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-clip: padding-box; border: 2px solid transparent; border-radius: 12px; padding: 45px 40px; max-width: 620px; margin: 40px auto 60px; box-shadow: 0 8px 40px rgba(0,0,0,0.18); text-align: center; }
         .hakkimizda::before { content: ''; position: absolute; inset: -2px; border-radius: 14px; background: linear-gradient(135deg, #FFD700 0%, #aaaaaa 60%, #666666 100%); z-index: -1; }
         .hakkimizda h2 { font-family: 'Oswald', sans-serif; color: var(--gold); font-size: 2rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
@@ -118,44 +104,37 @@
         .iletisim-butonu { display: inline-block; margin-top: 28px; padding: 13px 32px; background-color: var(--gold); color: #000; text-decoration: none; border-radius: 6px; font-weight: 900; font-family: 'Oswald', sans-serif; font-size: 1.15rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.22s ease; border: 2px solid var(--gold); cursor: pointer; }
         .iletisim-butonu:hover { background-color: #1a1a1a; color: var(--gold); border-color: #1a1a1a; transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.35); }
 
-        /* ─── MODAL ─────────────────────── */
+        /* ─── MODAL ─── */
         .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(20,20,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
         .modal-overlay.aktif { display: flex; }
         .modal-kutu { background: #222222; border: 2px solid var(--gold); border-radius: 14px; padding: 36px 34px 32px; width: 380px; max-width: 90vw; position: relative; animation: modalAc 0.25s ease; }
         @keyframes modalAc { from { opacity: 0; transform: scale(0.92) translateY(-12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-        .modal-kapat { position: absolute; top: 14px; right: 16px; background: var(--gold); color: #000; border: none; width: 28px; height: 28px; border-radius: 6px; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.2s; }
+        .modal-kapat { position: absolute; top: 14px; right: 16px; background: var(--gold); color: #000; border: none; width: 28px; height: 28px; border-radius: 6px; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
         .modal-kapat:hover { background: #fff; }
-        .modal-baslik { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 22px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 14px; }
-        .modal-satir { display: flex; flex-direction: column; gap: 14px; }
+        .modal-baslik { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 22px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 14px; text-align: center; }
         .modal-satir p { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1.6; }
-        .modal-satir a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
-        .modal-satir a:hover { color: #fff; }
-        .modal-sosyal { display: inline-flex; align-items: center; gap: 9px; margin-top: 4px; text-decoration: none; color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; transition: color 0.2s; }
         .modal-sosyal-row { display: flex; align-items: center; gap: 9px; margin-top: 4px; }
-        .modal-sosyal-row a { color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
-        .modal-sosyal-logo { width: 30px; height: 30px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; }
+        .modal-sosyal-row a { color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; text-decoration: underline; }
+        .modal-sosyal-logo { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; }
 
-        /* ─── GİRİŞ MODALİ ──────────────────────────── */
+        /* GİRİŞ MODALİ */
         .form-grup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
         .form-grup label { font-family: 'Oswald', sans-serif; font-size: 0.82rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); }
         .form-input { width: 100%; background: #2c2c2c; border: 1px solid rgba(255,215,0,0.25); border-radius: 7px; padding: 10px 14px; color: #fff; font-family: 'Nunito', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
         .form-input:focus { border-color: var(--gold); }
-        .form-input::placeholder { color: rgba(255,255,255,0.25); }
         .giris-submit { width: 100%; margin-top: 6px; padding: 12px; background-color: var(--gold); color: #000; border: none; border-radius: 7px; font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
         .giris-submit:hover { background-color: #e6c200; transform: translateY(-2px); }
         .kayit-link { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,215,0,0.15); font-family: 'Nunito', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.45); }
-        .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; transition: color 0.2s; }
-        #giris-hata { color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold; }
+        .kayit-link a { color: var(--gold); text-decoration: none; font-weight: 700; }
 
-        /* ─── FOOTER ─────────────────────────────────── */
+        /* ─── FOOTER ─── */
         .site-footer { background: #111111; border-top: 2px solid var(--gold); padding: 28px 20px; text-align: center; }
         .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .footer-inner > p { font-family: 'Nunito', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
         .footer-linkler { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-        .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; transition: color 0.2s; }
-        .footer-linkler a:hover { color: var(--gold); }
+        .footer-linkler a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.7); text-decoration: none; }
 
-        /* ─── MOBİL MENÜ ve UYUMLULUK ────────────────── */
+        /* ─── MOBİL MENÜ ─── */
         .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 26px; height: 19px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
         .hamburger span { display: block; width: 100%; height: 2.5px; background-color: #000; border-radius: 2px; transition: all 0.28s ease; }
         .hamburger.acik span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
@@ -166,10 +145,9 @@
         .mobil-overlay { display: none; position: fixed; inset: 0; top: 46px; z-index: 997; background: rgba(0,0,0,0.35); }
         .mobil-overlay.acik { display: block; }
         body.menu-acik { overflow: hidden; }
-        .mobil-menu > a { display: block; padding: 13px 22px; color: #000; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); transition: background 0.15s; }
-        .mobil-menu > a:hover { background: rgba(0,0,0,0.07); }
+        .mobil-menu > a { display: block; padding: 13px 22px; color: #000; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
         .mobil-kategori { border-bottom: 1px solid rgba(0,0,0,0.08); }
-        .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; transition: background 0.15s; }
+        .mobil-kategori-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 22px; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; color: #000; }
         .mobil-arrow { font-size: 0.65rem; transition: transform 0.25s; flex-shrink: 0; }
         .mobil-kategori-btn.acik .mobil-arrow { transform: rotate(180deg); }
         .mobil-alt-menu { display: none; background: rgba(0,0,0,0.06); }
@@ -177,77 +155,24 @@
         .mobil-alt-menu a { display: block; padding: 10px 22px 10px 38px; color: #111; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .giris-btn-mobil { display: block; width: calc(100% - 44px); margin: 16px 22px 6px; padding: 12px; background: #000; color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: none; border-radius: 7px; cursor: pointer; }
 
-        /* ─── BİZ KİMİZ SABİT BALON ─── */
-        .biz-kimiz-balon {
-            position: fixed; bottom: 28px; right: 28px; z-index: 900;
-            background: var(--gold); color: #000; border: none;
-            border-radius: 50px; padding: 12px 22px;
-            font-family: 'Oswald', sans-serif; font-size: 0.9rem;
-            font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-            cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-            display: flex; align-items: center; gap: 9px;
-            animation: balonNefes 2.4s ease-in-out infinite;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-        }
-        .biz-kimiz-balon:hover {
-            background: #1a1a1a; color: var(--gold);
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-            animation-play-state: paused;
-        }
-        .balon-nokta {
-            width: 8px; height: 8px; background: #000;
-            border-radius: 50%; flex-shrink: 0;
-            animation: balonNokta 2.4s ease-in-out infinite;
-        }
-        .biz-kimiz-balon:hover .balon-nokta { background: var(--gold); animation-play-state: paused; }
-        @keyframes balonNefes {
-            0%, 100% { box-shadow: 0 6px 22px rgba(255,215,0,0.35), 0 0 0 0 rgba(255,215,0,0.4); }
-            50%       { box-shadow: 0 6px 22px rgba(255,215,0,0.6),  0 0 0 12px rgba(255,215,0,0); }
-        }
-        @keyframes balonNokta {
-            0%, 100% { transform: scale(1);   opacity: 1; }
-            50%       { transform: scale(1.6); opacity: 0.5; }
-        }
-        /* BİZ KİMİZ MODALİ */
-        #biz-kimiz-modal .modal-kutu { width: 520px; max-width: 94vw; }
-        #biz-kimiz-modal .modal-baslik { font-size: 1.85rem; letter-spacing: 4px; }
-        .bk-icerik { display: flex; flex-direction: column; gap: 13px; }
-        .bk-icerik > p { color: rgba(255,255,255,0.82); font-family: 'Nunito', sans-serif; font-size: 1rem; line-height: 1.75; }
-        .bk-satir {
-            display: flex; align-items: flex-start; gap: 13px;
-            background: rgba(255,255,255,0.04); border-radius: 9px;
-            padding: 13px 15px; border-left: 3px solid var(--gold);
-        }
-        .bk-ikon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
-        .bk-metin strong { color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; display: block; margin-bottom: 3px; }
-        .bk-metin span { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
-        .bk-footer { font-size: 0.85rem; color: rgba(255,255,255,0.38); text-align: center; border-top: 1px solid rgba(255,215,0,0.12); padding-top: 12px; margin-top: 2px; }
-
         @media (max-width: 768px) {
             .navbar-inner { grid-template-columns: 1fr auto; padding: 0 16px; }
             .navbar-menu, .navbar-giris { display: none; }
             .hamburger { display: flex; }
-            
-            .ana-icerik { margin: 40px auto; gap: 40px; }
-            .alt-kutular { flex-direction: column; gap: 20px; }
-            
-            .arama-kutusu { flex-direction: column; border-radius: 12px; }
-            .arama-input { padding: 18px 20px; }
-            .arama-btn { padding: 15px; border-radius: 0 0 12px 12px; }
-
-            .hakkimizda { margin: 20px 16px 50px; padding: 28px 20px; }
+            .biz-kimiz-balon { display: none; /* Mobilde görüntü kirliliği yapmasın diye gizlendi */ }
         }
     </style>
 </head>
 <body>
 
-    <!-- ── NAVBAR ────────────────────────────────────── -->
+    <button class="biz-kimiz-balon" onclick="bizKimizAc()">
+        <span class="balon-nokta"></span> Biz Kimiz?
+    </button>
+
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="index.html" class="navbar-brand">
-                <img src="logo3.png" alt="Sorustaya Logo" class="navbar-logo">
-                Sorustaya
+                <img src="logo3.png" alt="Sorustaya Logo" class="navbar-logo" onerror="this.style.display='none'"> Sorustaya
             </a>
             <ul class="navbar-menu">
                 <li><a href="index.html">Ana Sayfa</a></li>
@@ -271,11 +196,8 @@
                 <li><a href="#" onclick="modalAc(); return false;">İletişim</a></li>
             </ul>
             <div class="navbar-giris">
-                <!-- ÖRNEK PROFİL BUTONU BURADA -->
                 <a href="profil.html" class="ornek-profil-link" id="ornek-profil-btn">Örnek Profil</a>
-                
                 <button class="giris-btn" id="btn-giris-yap" onclick="girisAc()">Giriş Yap</button>
-                
                 <div class="kullanici-menusu" id="menu-kullanici">
                     <button class="kullanici-btn">Profilim <span class="arrow">▼</span></button>
                     <div class="kullanici-dropdown">
@@ -291,41 +213,22 @@
         </div>
     </nav>
 
-    <!-- ── MOBİL MENÜ ────────────────────────────────── -->
     <div class="mobil-menu" id="mobil-menu">
         <a href="index.html">Ana Sayfa</a>
-        
         <div class="mobil-kategori" id="mobil-menu-kullanici" style="display: none;">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Profilim <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="profil.html">Profile Git</a>
-                <a href="#">Ayarlar</a>
-                <a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a>
-            </div>
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">Profilim <span class="mobil-arrow">▼</span></button>
+            <div class="mobil-alt-menu"><a href="profil.html">Profile Git</a><a href="#">Ayarlar</a><a href="#" onclick="cikisYap(); return false;">Çıkış Yap</a></div>
         </div>
-
         <div class="mobil-kategori">
-            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">
-                Kategoriler <span class="mobil-arrow">▼</span>
-            </button>
-            <div class="mobil-alt-menu">
-                <a href="#">Eğitim & Ders</a>
-                <a href="#">Yazılım & Teknoloji</a>
-                <a href="#">Tasarım & Çeviri</a>
-                <a href="#">Ev & Tadilat</a>
-            </div>
+            <button class="mobil-kategori-btn" onclick="kategoriToggle(this)">Kategoriler <span class="mobil-arrow">▼</span></button>
+            <div class="mobil-alt-menu"><a href="#">Eğitim & Ders</a><a href="#">Yazılım & Teknoloji</a><a href="#">Tasarım & Çeviri</a><a href="#">Ev & Tadilat</a></div>
         </div>
         <a href="#" onclick="modalAc(); menuToggle(); return false;">İletişim</a>
-        
-        <!-- MOBİL: ÖRNEK PROFİL -->
         <a href="profil.html" id="mobil-ornek-profil">Örnek Profil</a>
         <button class="giris-btn-mobil" id="mobil-btn-giris" onclick="girisAc(); menuToggle()">Giriş Yap</button>
     </div>
     <div class="mobil-overlay" id="mobil-overlay" onclick="menuToggle()"></div>
 
-    <!-- ── ANA İÇERİK ───────────── -->
     <div class="ana-icerik">
         <div class="ust-arama">
             <div class="arama-kutusu">
@@ -334,102 +237,52 @@
             </div>
             <div class="populer-aramalar">
                 <span class="populer-baslik">Popüler Etiketler:</span>
-                <a href="#" class="arama-etiketi">#ingilizce</a>
-                <a href="#" class="arama-etiketi">#yazılım</a>
-                <a href="#" class="arama-etiketi">#grafiktasarım</a>
-                <a href="#" class="arama-etiketi">#matematik</a>
-                <a href="#" class="arama-etiketi">#çeviri</a>
+                <a href="#" class="arama-etiketi">#ingilizce</a><a href="#" class="arama-etiketi">#yazılım</a>
+                <a href="#" class="arama-etiketi">#grafiktasarım</a><a href="#" class="arama-etiketi">#matematik</a>
             </div>
         </div>
         <div class="alt-kutular">
-            <a href="nasil-usta-olurum.html" class="usta-ol-kutu">
-                <div class="usta-ol-ikon">🚀</div>
-                <h3>NASIL USTA OLURUM?</h3>
-                <p>Yeteneklerini kazanca çevir! Kendi profilini oluştur, fiyatını belirle ve hemen iş almaya başla. 💡💸</p>
-                <span class="usta-ol-ok">Tıkla ve Öğren →</span>
-            </a>
-            <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;">
-                <div class="usta-ol-ikon">🤨</div>
-                <h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3>
-                <p>Param boşa mı gider? Usta işi yapmazsa ne olur? Tüm güvenlik sorularının cevabı burada. 🛡️👀</p>
-                <span class="usta-ol-ok" style="background: #ff6b6b; color: #fff;">Güvenceni Gör →</span>
-            </a>
+            <a href="nasil-usta-olurum.html" class="usta-ol-kutu"><div class="usta-ol-ikon">🚀</div><h3>NASIL USTA OLURUM?</h3><p>Yeteneklerini kazanca çevir! Kendi profilini oluştur ve hemen iş almaya başla.</p><span class="usta-ol-ok">Tıkla ve Öğren →</span></a>
+            <a href="ya-kandirilirsam.html" class="usta-ol-kutu" style="border-color: #ff6b6b;"><div class="usta-ol-ikon">🤨</div><h3 style="color: #ff6b6b;">YA KANDIRILIRSAM?</h3><p>Param boşa mı gider? Usta işi yapmazsa ne olur? Güvenlik sorularının cevabı burada.</p><span class="usta-ol-ok" style="background: #ff6b6b; color: #fff;">Güvenceni Gör →</span></a>
         </div>
     </div>
 
-    <!-- ── HAKKIMIZDA ────────────────────────────────── -->
     <div class="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>Sorustaya, uzmanlık gerektiren her konuda yetenekli kişileri ve hizmet arayanları bir araya getiren yeni nesil bir pazaryeridir.</p>
         <button onclick="modalAc()" class="iletisim-butonu">Bize Ulaşın</button>
     </div>
 
-    <!-- ── BİZ KİMİZ SABİT BALON ─── -->
-    <button class="biz-kimiz-balon" onclick="bizKimizAc()">
-        <span class="balon-nokta"></span>
-        Biz Kimiz?
-    </button>
-
-    <!-- ── BİZ KİMİZ MODALİ ─── -->
     <div class="modal-overlay" id="biz-kimiz-modal" onclick="bizKimizDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="bizKimizKapat()">✕</button>
             <div class="modal-baslik">BİZ KİMİZ?</div>
             <div class="bk-icerik">
-                <p><strong style="color:var(--gold);font-family:'Oswald',sans-serif;letter-spacing:1px;">Sorustaya</strong>, "işini ustasına sor" felsefesiyle kurulmuş, tamamen özgür ve açık bir yetenek &amp; hizmet pazaryeridir. Burada her konuda uzman bulmak ya da kendi uzmanlığını satmak mümkün.</p>
-                <div class="bk-satir">
-                    <span class="bk-ikon">🧠</span>
-                    <div class="bk-metin">
-                        <strong>Her Konuda Soru Sor</strong>
-                        <span>İngilizce dersinden 3D baskıya, muhasebeden astrolojiye — aklına ne takılırsa uzmana danış. Hiçbir konu dışarıda değil.</span>
-                    </div>
-                </div>
-                <div class="bk-satir">
-                    <span class="bk-ikon">🚀</span>
-                    <div class="bk-metin">
-                        <strong>Herkes Usta Olabilir</strong>
-                        <span>Diploman yoksa sorun değil. 3D baskı yapıyorsan, müzik üretiyorsan, yazılım yazıyorsan — o bilgi para eder. Profilini aç, fiyatını sen belirle, işinin patronu ol.</span>
-                    </div>
-                </div>
-                <div class="bk-satir">
-                    <span class="bk-ikon">🛡️</span>
-                    <div class="bk-metin">
-                        <strong>Paran Güvende</strong>
-                        <span>Güvenli Havuz Sistemi ile ödemen iş bitene kadar ustaya geçmez. İş beğenmezsen para direkt hesabına iade edilir.</span>
-                    </div>
-                </div>
-                <div class="bk-satir">
-                    <span class="bk-ikon">⭐</span>
-                    <div class="bk-metin">
-                        <strong>Şeffaf Yıldız Sistemi</strong>
-                        <span>Her tamamlanan iş bir yorum, her yorum bir yıldız. Sahte profil barınamaz, gerçek kalite öne çıkar.</span>
-                    </div>
-                </div>
+                <p><strong style="color:var(--gold);font-family:'Oswald',sans-serif;letter-spacing:1px;">Sorustaya</strong>, "işini ustasına sor" felsefesiyle kurulmuş, tamamen özgür ve açık bir yetenek &amp; hizmet pazaryeridir.</p>
+                <div class="bk-satir"><span class="bk-ikon">🧠</span><div class="bk-metin"><strong>Her Konuda Soru Sor</strong><span>Aklına ne takılırsa uzmana danış.</span></div></div>
+                <div class="bk-satir"><span class="bk-ikon">🚀</span><div class="bk-metin"><strong>Herkes Usta Olabilir</strong><span>O bilgi para eder. Profilini aç, fiyatını sen belirle.</span></div></div>
+                <div class="bk-satir"><span class="bk-ikon">🛡️</span><div class="bk-metin"><strong>Paran Güvende</strong><span>Ödemen iş bitene kadar ustaya geçmez.</span></div></div>
+                <div class="bk-satir"><span class="bk-ikon">⭐</span><div class="bk-metin"><strong>Şeffaf Yıldız Sistemi</strong><span>Sahte profil barınamaz, gerçek kalite öne çıkar.</span></div></div>
                 <p class="bk-footer">Sorustaya — İşi Ustasına Sor. 🔑</p>
             </div>
         </div>
     </div>
 
-    <!-- ── İLETİŞİM MODAL ──────────── -->
     <div class="modal-overlay" id="modal" onclick="disaritikla(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="modalKapat()">✕</button>
             <div class="modal-baslik">İletişim</div>
             <div class="modal-satir">
                 <p>Sorularınız için bizimle iletişime geçebilirsiniz.</p>
-                <div class="modal-sosyal-row">
-                    <img src="gmailpng.png" alt="Gmail" class="modal-sosyal-logo" onerror="this.style.display='none'">
-                    <a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a>
-                </div>
+                <div class="modal-sosyal-row"><a href="mailto:sorustayadestek@gmail.com">sorustayadestek@gmail.com</a></div>
             </div>
         </div>
     </div>
 
-    <!-- ── GİRİŞ MODALİ ──────────── -->
     <div class="modal-overlay" id="giris-modal" onclick="girisDisari(event)">
         <div class="modal-kutu">
             <button class="modal-kapat" onclick="girisKapat()">✕</button>
-            <div class="modal-baslik">Giriş Yap</div>
+            <div class="modal-baslik">GİRİŞ YAP</div>
             <div class="form-grup">
                 <label for="giris-mail">E-Posta</label>
                 <input type="text" id="giris-mail" class="form-input" placeholder="E-postanızı girin">
@@ -438,55 +291,47 @@
                 <label for="giris-sifre">Şifre</label>
                 <input type="password" id="giris-sifre" class="form-input" placeholder="••••••••">
             </div>
-            <div id="giris-hata" style="color: #ff6b6b; font-family: 'Nunito', sans-serif; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; font-weight: bold;">Hatalı E-Posta veya Şifre!</div>
+            <div id="giris-hata" style="color:#ff6b6b; display:none; text-align:center; font-weight:bold; margin-top:10px;">E-posta veya şifre yanlış!</div>
             <button class="giris-submit" onclick="sistemeGirisYap()">Giriş Yap</button>
-            <div class="kayit-link">
-                Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a>
-            </div>
+            <div class="kayit-link">Henüz hesabın yok mu? &nbsp;<a href="#">Kayıt Ol</a></div>
         </div>
     </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <div class="footer-linkler">
-                <a href="#" onclick="modalAc(); return false;">İletişim</a>
-                <a href="#">Gizlilik Politikası</a>
-                <a href="#">Kullanım Şartları</a>
-            </div>
+            <div class="footer-linkler"><a href="#" onclick="modalAc(); return false;">İletişim</a><a href="#">Gizlilik Politikası</a><a href="#">Kullanım Şartları</a></div>
             <p>© 2026 Sorustaya. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
     <script>
-        function modalAc()      { document.getElementById('modal').classList.add('aktif'); }
-        function modalKapat()   { document.getElementById('modal').classList.remove('aktif'); }
+        function modalAc() { document.getElementById('modal').classList.add('aktif'); }
+        function modalKapat() { document.getElementById('modal').classList.remove('aktif'); }
         function disaritikla(e) { if (e.target === document.getElementById('modal')) modalKapat(); }
-        function bizKimizAc()      { document.getElementById('biz-kimiz-modal').classList.add('aktif'); }
-        function bizKimizKapat()   { document.getElementById('biz-kimiz-modal').classList.remove('aktif'); }
+        function bizKimizAc() { document.getElementById('biz-kimiz-modal').classList.add('aktif'); }
+        function bizKimizKapat() { document.getElementById('biz-kimiz-modal').classList.remove('aktif'); }
         function bizKimizDisari(e) { if (e.target === document.getElementById('biz-kimiz-modal')) bizKimizKapat(); }
-        function girisAc()      { 
+        
+        function girisAc() { 
             document.getElementById('giris-modal').classList.add('aktif'); 
             document.getElementById('giris-hata').style.display = 'none';
-            document.getElementById('giris-mail').value = '';
-            document.getElementById('giris-sifre').value = '';
         }
-        function girisKapat()   { document.getElementById('giris-modal').classList.remove('aktif'); }
+        function girisKapat() { document.getElementById('giris-modal').classList.remove('aktif'); }
         function girisDisari(e) { if (e.target === document.getElementById('giris-modal')) girisKapat(); }
+        
         function menuToggle() {
             document.getElementById('hamburger').classList.toggle('acik');
             document.getElementById('mobil-menu').classList.toggle('acik');
             document.getElementById('mobil-overlay').classList.toggle('acik');
             document.body.classList.toggle('menu-acik');
         }
-        function kategoriToggle(btn) {
-            btn.classList.toggle('acik');
-            btn.nextElementSibling.classList.toggle('acik');
-        }
+        function kategoriToggle(btn) { btn.classList.toggle('acik'); btn.nextElementSibling.classList.toggle('acik'); }
 
-        /* ─── TARAYICI HAFIZASI VE GİRİŞ SİSTEMİ ─── */
-        document.addEventListener("DOMContentLoaded", function() {
-            girisDurumunuKontrolEt();
+        document.getElementById('giris-sifre').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') { sistemeGirisYap(); }
         });
+
+        document.addEventListener("DOMContentLoaded", function() { girisDurumunuKontrolEt(); });
 
         function sistemeGirisYap() {
             var mail = document.getElementById('giris-mail').value;
@@ -494,8 +339,7 @@
 
             if (mail === 'admin' && sifre === 'admin') {
                 localStorage.setItem('sorustaya_giris', 'admin');
-                girisKapat();
-                girisDurumunuKontrolEt();
+                girisKapat(); girisDurumunuKontrolEt();
             } else {
                 document.getElementById('giris-hata').style.display = 'block';
             }
@@ -510,15 +354,13 @@
         function girisDurumunuKontrolEt() {
             var girisYapan = localStorage.getItem('sorustaya_giris');
             if (girisYapan === 'admin') {
-                // Giriş yapıldıysa Örnek Profil gizlenir, Profilim menüsü açılır
                 document.getElementById('btn-giris-yap').style.display = 'none';
                 document.getElementById('ornek-profil-btn').style.display = 'none';
-                document.getElementById('menu-kullanici').style.display = 'block';
+                document.getElementById('menu-kullanici').style.display = 'flex';
                 document.getElementById('mobil-btn-giris').style.display = 'none';
                 document.getElementById('mobil-ornek-profil').style.display = 'none';
                 document.getElementById('mobil-menu-kullanici').style.display = 'block';
             } else {
-                // Çıkış yapıldıysa Giriş ve Örnek Profil geri gelir
                 document.getElementById('btn-giris-yap').style.display = 'block';
                 document.getElementById('ornek-profil-btn').style.display = 'block';
                 document.getElementById('menu-kullanici').style.display = 'none';
